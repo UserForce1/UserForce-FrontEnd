@@ -1,6 +1,31 @@
+"use client";
+import React, { useEffect } from "react";
+import {useRouter} from "next/navigation";
+import axios from "axios";
+
 import NavBarInternal from "@/app/components/navbarinternal";
 
 export default function RSIGNUP() {
+  const router = useRouter();
+    const [loading, setLoading] = React.useState(false);
+    const [user, setUser] = React.useState({
+        email: "",
+        password: "",
+    })
+
+      const onLogin = async () => {
+        try {
+            setLoading(true);
+            const response = await axios.post("/api/users/login", user);
+            router.push("/dashboard");
+            
+        } catch (error:any) {
+            console.log("Login failed", error.message);
+            
+        }finally {
+            setLoading(false);
+        }
+    }
   return (
     <>
       <div className="font-[sans-serif] text-[#333] bg-white">
@@ -8,6 +33,7 @@ export default function RSIGNUP() {
         <div className="min-h-screen flex fle-col items-center justify-center py-6 px-4">
           <div className="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
             <div className="max-md:text-center">
+              <h1>{loading ? "Processing" : "Login"}</h1>
               <h2 className="md:text-4xl text-3xl font-extrabold mb-6">
                 Recruit qualified participants in a jiffy
               </h2>
@@ -15,7 +41,7 @@ export default function RSIGNUP() {
               <p className=" mt-10">
                 Don't have an account{" "}
                 <a
-                  href="javascript:void(0);"
+                  href="/researchers/signup"
                   className="text-[#1553A4] font-semibold hover:underline ml-1"
                 >
                   Register here
@@ -34,6 +60,8 @@ export default function RSIGNUP() {
                   required
                   className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-[#1553A4]"
                   placeholder="Email address"
+                  value={user.email}
+                  onChange={(e) => setUser({...user, email: e.target.value})}
                 />
               </div>
               <div>
@@ -44,11 +72,13 @@ export default function RSIGNUP() {
                   required
                   className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-[#1553A4]"
                   placeholder="Password"
+                  value={user.password}
+                  onChange={(e) => setUser({...user, password: e.target.value})}
                 />
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <input
+                  {/* <input
                     id="remember-me"
                     name="remember-me"
                     type="checkbox"
@@ -56,7 +86,7 @@ export default function RSIGNUP() {
                   />
                   <label for="remember-me" className="ml-3 block text-sm">
                     Remember me
-                  </label>
+                  </label> */}
                 </div>
                 <div className="text-sm">
                   <a
@@ -69,6 +99,7 @@ export default function RSIGNUP() {
               </div>
               <div className="!mt-10">
                 <button
+                  onClick={onLogin}
                   type="button"
                   className="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded-full text-white hover:text-[#1553A4] bg-[#1553A4] border hover:border-[#1553A4] hover:bg-blue-100 focus:outline-none"
                 >

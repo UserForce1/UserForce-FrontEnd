@@ -24,7 +24,7 @@ export default function SIGNUP() {
                 />
               </div>
               <h2 className="md:text-4xl text-3xl font-extrabold mb-6">
-                For Researcher
+              Start Researching
               </h2>
               <div className="my-6">
                 <p className="">
@@ -58,7 +58,7 @@ export default function SIGNUP() {
                 />
               </div>
               <h2 className="md:text-4xl text-3xl font-extrabold mb-6">
-                For Participant
+              Get participated
               </h2>
               <div className="my-6">
                 <p className="text-sm">
@@ -66,7 +66,7 @@ export default function SIGNUP() {
                 </p>
               </div>
 
-              <button
+              {/* <button
                 onClick={() => router.push("/participants/signup")}
                 className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8"
               >
@@ -81,7 +81,7 @@ export default function SIGNUP() {
                     data-original="#000000"
                   ></path>
                 </svg>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

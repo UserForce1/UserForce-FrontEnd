@@ -29,7 +29,7 @@ export default function FAQ() {
                   <h3 className="text-lg font-semibold text-[#333]">
                     How can I create an account?
                   </h3>
-                  <p className="text-sm text-[#333] mt-4">
+                  <p className="text-base leading-relaxed mt-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Sed do eiusmod tempor incididunt ut labore et dolore
@@ -58,7 +58,7 @@ export default function FAQ() {
                   <h3 className="text-lg font-semibold text-[#333]">
                     Is there a mobile app available?
                   </h3>
-                  <p className="text-sm text-[#333] mt-4">
+                  <p className="text-base leading-relaxed mt-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua Sed do eiusmod tempor incididunt ut labore et dolore
@@ -87,7 +87,7 @@ export default function FAQ() {
                   <h3 className="text-lg font-semibold text-[#333]">
                     How can I reset my password?
                   </h3>
-                  <p className="text-sm text-[#333] mt-4">
+                  <p className="text-base leading-relaxed mt-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
@@ -115,7 +115,7 @@ export default function FAQ() {
                   <h3 className="text-lg font-semibold text-[#333]">
                     How do I update my account information?
                   </h3>
-                  <p className="text-sm text-[#333] mt-4">
+                  <p className="text-base leading-relaxed mt-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Sed do eiusmod tempor incididunt ut labore et dolore

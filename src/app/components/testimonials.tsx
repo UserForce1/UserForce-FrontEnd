@@ -56,7 +56,7 @@ export default function TESTIMONIALS() {
               <div className="flex space-x-2 mt-6">
                 <div className="">
                   <h4 className="font-extrabold">Brandan</h4>
-                  <p className="mt-1 text-xs text-gray-400">
+                  <p className="mt-1 text-xs text-gray-700">
                     Product Manager at Securly
                   </p>
                 </div>
@@ -75,7 +75,7 @@ export default function TESTIMONIALS() {
               <div className="flex space-x-2 mt-6">
                 <div className="">
                   <h4 className="font-extrabold">Nicolas</h4>
-                  <p className="mt-1 text-xs text-gray-400">
+                  <p className="mt-1 text-xs text-gray-700">
                     Sr User researcher at IQ Next
                   </p>
                 </div>
@@ -94,7 +94,7 @@ export default function TESTIMONIALS() {
               <div className="flex space-x-2 mt-6">
                 <div className="">
                   <h4 className="font-extrabold">Michael</h4>
-                  <p className="mt-1 text-xs text-gray-400">
+                  <p className="mt-1 text-xs text-gray-700">
                     Sr Product manager at Tooljet
                   </p>
                 </div>

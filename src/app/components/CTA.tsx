@@ -8,7 +8,7 @@ export default function CTA() {
               Finding the perfect participants for your interviews just got
               simpler
             </h2>
-            <p>
+            <p className="text-base leading-relaxed">
               Discover verified users, public and professionals prepared to
               offer insights. Tailor your targeting based on location, job
               title, industry, domain, skills, and beyond. Efficiently recruit,
@@ -48,7 +48,7 @@ export default function CTA() {
             <h2 className="md:text-4xl text-3xl font-extrabold mb-6">
               Enroll for paid product interviews
             </h2>
-            <p>
+            <p className="text-base leading-relaxed">
               Are you prepared to earn money by taking part in product
               interviews? <br />
               Join Userforce to participate in significant research endeavours.

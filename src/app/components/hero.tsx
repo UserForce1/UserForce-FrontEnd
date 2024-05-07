@@ -4,10 +4,10 @@ export default function Hero() {
       <div className="max-w-7xl w-full mx-auto py-16">
         <div className="grid lg:grid-cols-2 justify-center items-center gap-10">
           <div>
-            <h1 className="md:text-5xl text-4xl font-extrabold mb-6 md:!leading-[55px]">
+            <h2 className="md:text-4xl text-3xl font-extrabold mb-6">
               We bridge the gap between researchers and participants to help you
               with your market fit
-            </h1>
+            </h2>
             <p className="text-base leading-relaxed">
               Quickly find good participants or earn money for participating in
               user interviews

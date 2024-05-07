@@ -1,6 +1,27 @@
+"use client";
+import React, { useEffect } from "react";
+import {useRouter} from "next/navigation";
+import axios from "axios";
 import NavBarInternal from "@/app/components/navbarinternal";
 
 export default function RSIGNUP() {
+  const router = useRouter();
+    const [user, setUser] = React.useState({
+        email: "",
+        password: "",
+        firstname: "",
+        lastname: "",
+    })
+
+    const onSignup = async () => {
+      try {
+          const response = await axios.post("/api/users/signup", user);
+          router.push("/researchers/signin");
+          
+      } catch (error:any) {
+          console.log("Signup failed", error.message);
+      }
+  }
   return (
     <>
       <div className="font-[sans-serif] text-[#333] bg-white min-h-screen  items-center justify-center ">
@@ -11,7 +32,7 @@ export default function RSIGNUP() {
           </h4>
         </div>
         <div className="mx-4 mb-4 -mt-16">
-          <form className="max-w-4xl mx-auto bg-white shadow-[0_2px_18px_-3px_rgba(6,81,237,0.4)] sm:p-8 p-4 rounded-md">
+          <form className="max-w-4xl mx-auto bg-white shadow-[0_2px_18px_-3px_rgba(6,81,237,0.4)] sm:p-8 p-4 rounded-md novalidate">
             <div className="grid md:grid-cols-2 md:gap-12 gap-7">
               <button
                 type="button"
@@ -98,8 +119,12 @@ export default function RSIGNUP() {
                 <input
                   name="name"
                   type="text"
-                  className="bg-gray-100 w-full text-sm px-4 py-3 rounded-md outline-[#1553A4]"
+                  className="... invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500 bg-gray-100 w-full text-sm px-4 py-3 rounded-md outline-[#1553A4]"
                   placeholder="Enter name"
+                  value={user.firstname}
+                  onChange={(e) => setUser({...user, firstname: e.target.value})}
+                  required
+                  pattern=".{7,}"
                 />
               </div>
               <div>
@@ -109,6 +134,8 @@ export default function RSIGNUP() {
                   type="text"
                   className="bg-gray-100 w-full text-sm px-4 py-3 rounded-md outline-[#1553A4]"
                   placeholder="Enter last name"
+                  value={user.lastname}
+                  onChange={(e) => setUser({...user, lastname: e.target.value})}
                 />
               </div>
               <div>
@@ -118,6 +145,8 @@ export default function RSIGNUP() {
                   type="text"
                   className="bg-gray-100 w-full text-sm px-4 py-3 rounded-md outline-[#1553A4]"
                   placeholder="Enter email"
+                  value={user.email}
+                  onChange={(e) => setUser({...user, email: e.target.value})}
                 />
               </div>
 
@@ -128,11 +157,14 @@ export default function RSIGNUP() {
                   type="password"
                   className="bg-gray-100 w-full text-sm px-4 py-3 rounded-md outline-[#1553A4]"
                   placeholder="Enter password"
+                  value={user.password}
+                  onChange={(e) => setUser({...user, password: e.target.value})}
                 />
               </div>
             </div>
             <div className="!mt-10">
               <button
+                onClick={onSignup}
                 type="button"
                 className="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded-full text-white hover:text-[#1553A4] bg-[#1553A4] border hover:border-[#1553A4] hover:bg-blue-100 focus:outline-none"
               >

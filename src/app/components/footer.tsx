@@ -8,7 +8,7 @@ export default function FOOTER() {
               <a href="javascript:void(0)">
                 <img src="Logo.svg" alt="logo" className="w-40 mb-6" />
               </a>
-              <p className="mb-2">
+              <p className="text-base leading-relaxed mb-2">
                 We bridge the gap between researchers and participants to help
                 you with your market fit.
               </p>

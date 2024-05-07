@@ -6,7 +6,7 @@ export default function CTA2() {
           <h2 className="md:text-4xl text-3xl font-extrabold mb-6">
             Real human insight, delivered real fast
           </h2>
-          <p>
+          <p className="text-base leading-relaxed">
             Watch real people engage with your products, apps, or services, and
             easily get a vivid, first-person understanding of any experience.
           </p>
