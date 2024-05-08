@@ -1,39 +1,67 @@
 "use client";
-import React, { useEffect } from "react";
+
 import {useRouter} from "next/navigation";
 import axios from "axios";
 import NavBarInternal from "@/app/components/navbarinternal";
+import React, { FormEvent, useState } from 'react'
+import signUpFormSchema from "@/app/schema/researchers/signUpFormSchema"
+import useForm from "@/app/hooks/useForm"
+import SignUpForm from "@/app/components/forms/researchers/SignupForm"
+
+const initialFormData = {
+  firstname: '',
+  lastname: '',
+  email: '',
+  password: ''
+}
 
 export default function RSIGNUP() {
-  const router = useRouter();
-    const [user, setUser] = React.useState({
-        email: "",
-        password: "",
-        firstname: "",
-        lastname: "",
-    })
 
-    const onSignup = async () => {
-      try {
-          const response = await axios.post("/api/users/signup", user);
-          router.push("/researchers/signin");
-          
-      } catch (error:any) {
-          console.log("Signup failed", error.message);
-      }
+const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [disableClientValidation, setDisableClientValidation] = useState<boolean>(false);
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    const formData = getFormData();
+    console.log(formData)
+
+    // Validate form
+    if (!disableClientValidation) {
+      if (! await validateForm()) return;
+    }
+
+    try {
+      const response = await axios.post("/api/users/signup", formData);
+      router.push("/researchers/signin");
+      
+  } catch (error:any) {
+      console.log("Signup failed", error.message);
   }
+  }
+
+  const { render, getFormData, setFormData, validateForm, resetForm } = useForm({
+    FormComponent: SignUpForm,
+    initialFormData: initialFormData,
+    schema: signUpFormSchema,
+    handleSubmit: handleSubmit,
+    isLoading: isLoading
+  });
+
+
+  const router = useRouter();
+
   return (
     <>
       <div className="font-[sans-serif] text-[#333] bg-white min-h-screen  items-center justify-center ">
         <NavBarInternal />
         <div className="text-center  bg-blue-100 min-h-[160px] sm:p-6 p-4">
-          <h4 className="md:text-4xl text-3xl font-extrabold mb-6 text-black">
+          <h4 className="md:text-4xl text-3xl font-extrabold mb-6">
             Create your free account
           </h4>
         </div>
         <div className="mx-4 mb-4 -mt-16">
-          <form className="max-w-4xl mx-auto bg-white shadow-[0_2px_18px_-3px_rgba(6,81,237,0.4)] sm:p-8 p-4 rounded-md novalidate">
-            <div className="grid md:grid-cols-2 md:gap-12 gap-7">
+          <div 
+          className="max-w-4xl mx-auto bg-white shadow-[0_2px_18px_-3px_rgba(6,81,237,0.4)] sm:p-8 p-4 rounded-md">
+            {/* <div className="grid md:grid-cols-2 md:gap-12 gap-7">
               <button
                 type="button"
                 className="w-full px-4 py-3 flex items-center justify-center rounded-md text-[#333] text-base tracking-wider font-semibold border-none outline-none bg-gray-100 hover:bg-gray-200"
@@ -112,66 +140,18 @@ export default function RSIGNUP() {
             </div>
             <div className="my-7 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
               <p className="mx-4 text-center">Or</p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-y-7 gap-x-12">
-              <div>
-                <label className="text-sm mb-2 block">First Name</label>
-                <input
-                  name="name"
-                  type="text"
-                  className="... invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500 bg-gray-100 w-full text-sm px-4 py-3 rounded-md outline-[#1553A4]"
-                  placeholder="Enter name"
-                  value={user.firstname}
-                  onChange={(e) => setUser({...user, firstname: e.target.value})}
-                  required
-                  pattern=".{7,}"
-                />
-              </div>
-              <div>
-                <label className="text-sm mb-2 block">Last Name</label>
-                <input
-                  name="lname"
-                  type="text"
-                  className="bg-gray-100 w-full text-sm px-4 py-3 rounded-md outline-[#1553A4]"
-                  placeholder="Enter last name"
-                  value={user.lastname}
-                  onChange={(e) => setUser({...user, lastname: e.target.value})}
-                />
-              </div>
-              <div>
-                <label className="text-sm mb-2 block">Email Id</label>
-                <input
-                  name="email"
-                  type="text"
-                  className="bg-gray-100 w-full text-sm px-4 py-3 rounded-md outline-[#1553A4]"
-                  placeholder="Enter email"
-                  value={user.email}
-                  onChange={(e) => setUser({...user, email: e.target.value})}
-                />
-              </div>
-
-              <div>
-                <label className="text-sm mb-2 block">Password</label>
-                <input
-                  name="password"
-                  type="password"
-                  className="bg-gray-100 w-full text-sm px-4 py-3 rounded-md outline-[#1553A4]"
-                  placeholder="Enter password"
-                  value={user.password}
-                  onChange={(e) => setUser({...user, password: e.target.value})}
-                />
-              </div>
-            </div>
+            </div> */}
+            {render()}
             <div className="!mt-10">
               <button
-                onClick={onSignup}
-                type="button"
-                className="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded-full text-white hover:text-[#1553A4] bg-[#1553A4] border hover:border-[#1553A4] hover:bg-blue-100 focus:outline-none"
+                onClick={handleSubmit}
+                type="submit"
+                className="w-full shadow-xl py-2.5 px-4 font-semibold rounded-full text-white hover:text-[#1553A4] bg-[#1553A4] border hover:border-[#1553A4] hover:bg-blue-100 focus:outline-none"
               >
                 Sign up
               </button>
             </div>
-            <p className="text-sm mt-6 text-center">
+            <p className="text-base leading-relaxed mt-6 text-center">
               Already have an account?{" "}
               <a
                 href="/researchers/signin"
@@ -180,7 +160,7 @@ export default function RSIGNUP() {
                 Login here
               </a>
             </p>
-          </form>
+          </div>
         </div>
       </div>
     </>

@@ -16,7 +16,9 @@ export default function SIGNUP() {
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-4 mt-4">
-            <div className="bg-[#F9F9F9] text-black max-sm:px-8 px-12 py-8 w-full rounded shadow-[0_20px_50px_rgb(59,130,246,0.4)] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-75 duration-300 focus:bg-transparent focus:text-rose-600">
+            <a 
+             onClick={() => router.push("/researchers/signup")}
+            className="bg-[#F9F9F9] cursor-pointer text-black max-sm:px-8 px-12 py-8 w-full rounded shadow-[0_20px_50px_rgb(59,130,246,0.4)] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-75 duration-300 focus:bg-transparent focus:text-rose-600">
               <div>
                 <img
                   src="https://readymadeui.com/image-1.webp"
@@ -33,7 +35,7 @@ export default function SIGNUP() {
                 </p>
               </div>
 
-              <button
+              {/* <button
                 onClick={() => router.push("/researchers/signup")}
                 className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8"
               >
@@ -48,9 +50,11 @@ export default function SIGNUP() {
                     data-original="#000000"
                   ></path>
                 </svg>
-              </button>
-            </div>
-            <div className="bg-[#F9F9F9] max-sm:px-8 px-12 py-6 w-full rounded text-black shadow-[0_20px_50px_rgb(59,130,246,0.4)] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-75 duration-300 focus:bg-transparent focus:text-rose-600 ">
+              </button> */}
+            </a>
+            <a
+             onClick={() => router.push("/participants/signup")}
+            className="bg-[#F9F9F9] cursor-pointer max-sm:px-8 px-12 py-6 w-full rounded text-black shadow-[0_20px_50px_rgb(59,130,246,0.4)] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-75 duration-300 focus:bg-transparent focus:text-rose-600 ">
               <div className=" py-2">
                 <img
                   src="https://readymadeui.com/contact.webp"
@@ -82,7 +86,7 @@ export default function SIGNUP() {
                   ></path>
                 </svg>
               </button> */}
-            </div>
+            </a>
           </div>
         </div>
       </div>

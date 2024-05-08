@@ -10,11 +10,13 @@ connect()
 
 
 export async function POST(request: NextRequest){
+    console.log("inside api signup")
 
 // Defines an asynchronous POST request handler.
     try {
         const reqBody = await request.json()
         const {firstname, lastname, email, password} = reqBody
+        console.log(firstname, lastname, email, password)
 // Parses the request body to extract username, email, and password.
 
 //Checks if a user with the provided email already exists. 

@@ -28,35 +28,24 @@ export default function RSIGNUP() {
     }
   return (
     <>
-      <div className="font-[sans-serif] text-[#333] bg-white">
+      <div className="font-[sans-serif] text-[#333] bg-white min-h-screen  items-center justify-center ">
         <NavBarInternal />
-        <div className="min-h-screen flex fle-col items-center justify-center py-6 px-4">
-          <div className="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
-            <div className="max-md:text-center">
-              <h1>{loading ? "Processing" : "Login"}</h1>
-              <h2 className="md:text-4xl text-3xl font-extrabold mb-6">
-                Recruit qualified participants in a jiffy
-              </h2>
-              <p className="mt-6">Feel free to sign up.</p>
-              <p className=" mt-10">
-                Don't have an account{" "}
-                <a
-                  href="/researchers/signup"
-                  className="text-[#1553A4] font-semibold hover:underline ml-1"
-                >
-                  Register here
-                </a>
-              </p>
-            </div>
-            <form className="space-y-6 max-w-md md:ml-auto max-md:mx-auto w-full border-black border p-10 bg-blue-100 rounded-2xl">
-              <h3 className="text-3xl font-extrabold mb-8 max-md:text-center">
+        <div className="text-center  bg-blue-100 min-h-[160px] sm:p-6 p-4">
+          <h4 className="md:text-4xl text-3xl font-extrabold mb-6">
+            Sign In to your account
+          </h4>
+        </div>
+        <div className="mx-4 mb-4 -mt-16 ">
+         
+           
+           <form className="space-y-6 max-w-md m-auto  w-full border-black border p-10 bg-white rounded-2xl">
+              {/* <h3 className="md:text-4xl text-3xl font-extrabold mb-6 mb-8 max-md:text-center">
                 Sign in
-              </h3>
+              </h3> */}
               <div>
                 <input
                   name="email"
                   type="email"
-                  autocomplete="email"
                   required
                   className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-[#1553A4]"
                   placeholder="Email address"
@@ -68,7 +57,6 @@ export default function RSIGNUP() {
                 <input
                   name="password"
                   type="password"
-                  autocomplete="current-password"
                   required
                   className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-[#1553A4]"
                   placeholder="Password"
@@ -88,25 +76,25 @@ export default function RSIGNUP() {
                     Remember me
                   </label> */}
                 </div>
-                <div className="text-sm">
+                {/* <div className="text-sm">
                   <a
                     href="jajvascript:void(0);"
                     className="text-[#1553A4] hover:text-blue-500"
                   >
                     Forgot your password?
                   </a>
-                </div>
+                </div> */}
               </div>
               <div className="!mt-10">
                 <button
                   onClick={onLogin}
                   type="button"
-                  className="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded-full text-white hover:text-[#1553A4] bg-[#1553A4] border hover:border-[#1553A4] hover:bg-blue-100 focus:outline-none"
+                  className="w-full shadow-xl py-2.5 px-4 font-semibold rounded-full text-white hover:text-[#1553A4] bg-[#1553A4] border hover:border-[#1553A4] hover:bg-blue-100 focus:outline-none"
                 >
                   Log in
                 </button>
               </div>
-              <p className="my-10 text-sm text-center">or continue with</p>
+              {/* <p className="my-10 text-sm text-center">or continue with</p>
               <div className="space-x-6 flex justify-center">
                 <button type="button" className="border-none outline-none">
                   <svg
@@ -174,11 +162,29 @@ export default function RSIGNUP() {
                     ></path>
                   </svg>
                 </button>
-              </div>
+              </div> */}
             </form>
+            {/* <div className="!mt-10">
+              <button
+                onClick={handleSubmit}
+                type="submit"
+                className="w-full shadow-xl py-2.5 px-4 font-semibold rounded-full text-white hover:text-[#1553A4] bg-[#1553A4] border hover:border-[#1553A4] hover:bg-blue-100 focus:outline-none"
+              >
+                Sign up
+              </button>
+            </div>
+            <p className="text-base leading-relaxed mt-6 text-center">
+              Already have an account?{" "}
+              <a
+                href="/researchers/signin"
+                className="text-[#1553A4] font-semibold hover:underline ml-1"
+              >
+                Login here
+              </a>
+            </p> */}
           </div>
         </div>
-      </div>
+        
     </>
   );
 }
