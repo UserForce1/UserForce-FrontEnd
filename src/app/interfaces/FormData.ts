@@ -4,3 +4,9 @@ export interface RsignUpFormData {
     email: string,
     password: string
 }
+
+export interface PsignUpFormData {
+    name: string,
+    email: string,
+    password: string
+}

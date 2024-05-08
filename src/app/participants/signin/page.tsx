@@ -1,24 +1,50 @@
+"use client";
+import React, { useEffect } from "react";
+import {useRouter} from "next/navigation";
+import axios from "axios";
+
 import NavBarInternal from "@/app/components/navbarinternal";
 
-export default function PSIGNUP() {
+export default function PSIGNIN() {
+  const router = useRouter();
+    const [loading, setLoading] = React.useState(false);
+    const [user, setUser] = React.useState({
+        email: "",
+        password: "",
+    })
+
+      const onLogin = async () => {
+        try {
+            setLoading(true);
+            const response = await axios.post("/api/users/login/participants", user);
+            router.push("/dashboard");
+            
+        } catch (error:any) {
+            console.log("Login failed", error.message);
+            
+        }finally {
+            setLoading(false);
+        }
+    }
+
   return (
     <>
-      <div className="font-[sans-serif] text-[#333] bg-white">
+      <div className="font-[sans-serif] text-[#333] bg-white min-h-screen  items-center justify-center ">
         <NavBarInternal />
-        <div className="min-h-screen flex fle-col items-center justify-center py-6 px-4">
-          <div className="grid md:grid-cols-2 items-center gap-4 max-w-7xl w-full">
-            <div className="lg:h-[400px] md:h-[300px] max-md:mt-10">
+        <div className="sm:w-1/2 max-w-4xl items-center justify-center mx-auto mt-10 px-6">
+          <div className="items-center gap-4 max-w-7xl w-full">
+            {/* <div className="lg:h-[400px] md:h-[300px] max-md:mt-10">
               <img
                 src="https://readymadeui.com/login-image.webp"
                 className="w-full h-full object-cover"
                 alt="Dining Experience"
               />
-            </div>
-            <div className="border border-gray-300 rounded-md p-6 max-w-md shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)] max-md:mx-auto">
+            </div> */}
+            <div className="border border-gray-300 rounded-md p-6 max-w-md shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)] mx-auto">
               <form className="space-y-6">
                 <div className="mb-10">
-                  <h3 className="text-3xl font-extrabold">Sign in</h3>
-                  <p className="text-sm mt-4">
+                  <h3 className="text-2xl font-extrabold">Sign in</h3>
+                  <p className="text-base leading-relaxed mt-4">
                     Boost your monthly income in giving product interviews
                   </p>
                 </div>
@@ -31,6 +57,7 @@ export default function PSIGNUP() {
                       required
                       className="w-full text-sm border border-gray-300 px-4 py-3 rounded-md outline-[#1553A4]"
                       placeholder="Enter username"
+                      onChange={(e) => setUser({...user, email: e.target.value})}
                     />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -61,6 +88,7 @@ export default function PSIGNUP() {
                       required
                       className="w-full text-sm border border-gray-300 px-4 py-3 rounded-md outline-[#1553A4]"
                       placeholder="Enter password"
+                      onChange={(e) => setUser({...user, password: e.target.value})}
                     />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +104,7 @@ export default function PSIGNUP() {
                     </svg>
                   </div>
                 </div>
-                <div className="flex items-center justify-between gap-2">
+                {/* <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center">
                     <input
                       id="remember-me"
@@ -96,16 +124,17 @@ export default function PSIGNUP() {
                       Forgot your password?
                     </a>
                   </div>
-                </div>
+                </div> */}
                 <div className="!mt-6">
                   <button
+                  onClick={onLogin}
                     type="button"
                     className="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded-full text-white bg-[#1553A4] hover:bg-blue-100 hover:text-[#1553A4] border hover:border-[#1553A4] focus:outline-none"
                   >
                     Log in
                   </button>
                 </div>
-                <p className="my-12 text-sm  text-center">or continue with</p>
+                {/* <p className="my-12 text-sm  text-center">or continue with</p>
                 <div className="space-x-6 flex justify-center">
                   <button type="button" className="border-none outline-none">
                     <svg
@@ -173,11 +202,11 @@ export default function PSIGNUP() {
                       ></path>
                     </svg>
                   </button>
-                </div>
-                <p className="text-sm !mt-10 text-center">
+                </div> */}
+                <p className="text-base leading-relaxed !mt-10 text-center">
                   Don't have an account{" "}
                   <a
-                    href="javascript:void(0);"
+                    href="/participants/signup"
                     className="text-[#1553A4] hover:underline ml-1 whitespace-nowrap"
                   >
                     Register here
