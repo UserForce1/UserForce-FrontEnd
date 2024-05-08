@@ -1,13 +1,12 @@
 "use client";
 import router, { useRouter } from "next/navigation";
 import NavBar from "../components/navbar";
-import NavBarInternal from "../components/navbarinternal";
 
 export default function SIGNUP() {
   const router = useRouter();
   return (
     <>
-      <NavBarInternal />
+      <NavBar />
       <div className="bg-white h-screen">
         <div className="max-w-6xl mx-auto font-[sans-serif]">
           <div className="text-center max-w-2xl mx-auto pt-10 pb-4">

@@ -1,4 +1,7 @@
+"use client";
+import { useRouter } from "next/navigation";
 export default function Hero() {
+  const router = useRouter();
   return (
     <div className="min-h-[500px] bg-blue-100 px-4 sm:px-10">
       <div className="max-w-7xl w-full mx-auto py-16">
@@ -14,7 +17,9 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-y-4 gap-x-8 mt-8">
-              <button className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center font-semibold rounded-md px-5 py-4 transform transition-all duration-500 ease-in-out hover:scale-110 hover:shadow-xl hover:rotate-12 hover:brightness-110">
+              <button 
+              onClick={() => router.push("/signup")}
+              className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center font-semibold rounded-md px-5 py-4 transform transition-all duration-500 ease-in-out hover:scale-110 hover:shadow-xl hover:rotate-12 hover:brightness-110">
                 Get started
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

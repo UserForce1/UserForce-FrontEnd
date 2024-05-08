@@ -1,4 +1,7 @@
+"use client";
+import { useRouter } from "next/navigation";
 export default function CTA2() {
+  const router = useRouter();
   return (
     <>
       <div className="mt-16 px-4 sm:px-10 bg-blue-200 border border-[#1553A4] mx-10 rounded-3xl">
@@ -10,7 +13,9 @@ export default function CTA2() {
             Watch real people engage with your products, apps, or services, and
             easily get a vivid, first-person understanding of any experience.
           </p>
-          <button className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8 transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 hover:animate-pulse active:animate-bounce">
+          <button 
+          onClick={() => router.push("/signup")}
+          className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8 transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 hover:animate-pulse active:animate-bounce">
             Get started
             <svg
               xmlns="http://www.w3.org/2000/svg"

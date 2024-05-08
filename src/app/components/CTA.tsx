@@ -1,4 +1,7 @@
+"use client";
+import { useRouter } from "next/navigation";
 export default function CTA() {
+  const router = useRouter();
   return (
     <>
       <div className="px-4 sm:px-10 mt-16">
@@ -14,7 +17,9 @@ export default function CTA() {
               title, industry, domain, skills, and beyond. Efficiently recruit,
               schedule, and compensate participants, all through Userforce.
             </p>
-            <button className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8">
+            <button 
+            onClick={() => router.push("/signup")}
+            className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8">
               Start your research
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +58,9 @@ export default function CTA() {
               interviews? <br />
               Join Userforce to participate in significant research endeavours.
             </p>
-            <button className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8 hover:animate-bounce relative overflow-hidden">
+            <button 
+            onClick={() => router.push("/signup")}
+            className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8 hover:animate-bounce relative overflow-hidden">
               Sign up as a participant
               <svg
                 xmlns="http://www.w3.org/2000/svg"

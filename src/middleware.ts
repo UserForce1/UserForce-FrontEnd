@@ -14,7 +14,7 @@ export function middleware(request: NextRequest) {
   if(isPublicPath && token) {
 
  // If trying to access a public path with a token, redirect to the home page
-    return NextResponse.redirect(new URL('/dashboard', request.nextUrl))
+    return NextResponse.redirect(new URL('/dashboard' || '/dashboard/participants', request.nextUrl))
   }
 
 // If trying to access a protected path without a token, redirect to the login page
@@ -30,6 +30,7 @@ export const config = {
   matcher: [
     '/',
     '/dashboard',
+    '/dashboard/participants',
     '/signup',
     '/participants/signup',
     '/participants/signin',

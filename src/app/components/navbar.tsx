@@ -22,9 +22,9 @@ export default function NavBar() {
   const router = useRouter();
 
   return (
-    <header className="py-4 px-4 sm:px-10 bg-white z-50 relative">
+    <header className="py-4 px-4 sm:px-10 bg-white z-50 relative shadow-md">
       <div className="max-w-7xl w-full mx-auto flex flex-wrap items-center gap-4">
-        <a href="javascript:void(0)">
+        <a href="/">
           <img src="/Logo.svg" alt="logo" className="w-40" />
         </a>
 

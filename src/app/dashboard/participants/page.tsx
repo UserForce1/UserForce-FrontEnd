@@ -1,6 +1,6 @@
 "use client";
 import router, { useRouter } from "next/navigation";
-import NavBarInternal from "../components/navbarinternal";
+import NavBarInternal from "../../components/navbarinternal";
 import axios from "axios";
 import { useState } from "react";
 
@@ -9,7 +9,7 @@ export default function DASHBOARD() {
   const [data, setData] = useState("nothing")
 
 const getUserDetails = async () => {
-  const res = await axios.get('/api/users/me')
+  const res = await axios.get('/api/users/me/participants')
   setData(res.data.data._id)
 }
 

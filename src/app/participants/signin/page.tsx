@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import {useRouter} from "next/navigation";
 import axios from "axios";
 
-import NavBarInternal from "@/app/components/navbarinternal";
+import NavBar from "@/app/components/navbar";
 
 export default function PSIGNIN() {
   const router = useRouter();
@@ -17,7 +17,7 @@ export default function PSIGNIN() {
         try {
             setLoading(true);
             const response = await axios.post("/api/users/login/participants", user);
-            router.push("/dashboard");
+            router.push("/dashboard/participants");
             
         } catch (error:any) {
             console.log("Login failed", error.message);
@@ -30,7 +30,7 @@ export default function PSIGNIN() {
   return (
     <>
       <div className="font-[sans-serif] text-[#333] bg-white min-h-screen  items-center justify-center ">
-        <NavBarInternal />
+        <NavBar />
         <div className="sm:w-1/2 max-w-4xl items-center justify-center mx-auto mt-10 px-6">
           <div className="items-center gap-4 max-w-7xl w-full">
             {/* <div className="lg:h-[400px] md:h-[300px] max-md:mt-10">

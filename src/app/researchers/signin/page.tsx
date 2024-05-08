@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import {useRouter} from "next/navigation";
 import axios from "axios";
 
-import NavBarInternal from "@/app/components/navbarinternal";
+import NavBar from "@/app/components/navbar";
 
 export default function RSIGNUP() {
   const router = useRouter();
@@ -29,7 +29,7 @@ export default function RSIGNUP() {
   return (
     <>
       <div className="font-[sans-serif] text-[#333] bg-white min-h-screen  items-center justify-center ">
-        <NavBarInternal />
+        <NavBar />
         <div className="text-center  bg-blue-100 min-h-[160px] sm:p-6 p-4">
           <h4 className="md:text-4xl text-3xl font-extrabold mb-6">
             Sign In to your account
@@ -163,6 +163,15 @@ export default function RSIGNUP() {
                   </svg>
                 </button>
               </div> */}
+              <p className="text-base leading-relaxed mt-6 text-center">
+              Don't have an account{" "}
+              <a
+                href="/researchers/signup"
+                className="text-[#1553A4] font-semibold hover:underline ml-1"
+              >
+                Register here
+              </a>
+            </p>
             </form>
             {/* <div className="!mt-10">
               <button
@@ -172,16 +181,8 @@ export default function RSIGNUP() {
               >
                 Sign up
               </button>
-            </div>
-            <p className="text-base leading-relaxed mt-6 text-center">
-              Already have an account?{" "}
-              <a
-                href="/researchers/signin"
-                className="text-[#1553A4] font-semibold hover:underline ml-1"
-              >
-                Login here
-              </a>
-            </p> */}
+            </div> */}
+            
           </div>
         </div>
         
