@@ -17,7 +17,7 @@ export default function PSIGNIN() {
         try {
             setLoading(true);
             const response = await axios.post("/api/users/login/participants", user);
-            router.push("/dashboard/participants");
+            router.push("/participants/profile");
             
         } catch (error:any) {
             console.log("Login failed", error.message);

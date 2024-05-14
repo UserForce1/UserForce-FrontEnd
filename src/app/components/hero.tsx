@@ -46,9 +46,9 @@ export default function Hero() {
           </div>
           <div className="max-lg:mt-12 h-full">
             <img
-              src="https://readymadeui.com/analtsis.webp"
+              src="/HeroPage.jpeg"
               alt="banner img"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover border border-white"
             />
           </div>
         </div>
