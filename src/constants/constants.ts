@@ -66,3 +66,33 @@ worksetting: [
     { value: "No, my computer doest not have a webcam", label: "No, my computer doest not have a webcam" },
   ],
 };
+
+export const researchersFormData = {
+  professional: [
+    {value: "Data Analyst",label: "Data Analyst"},
+    {value:  "Customer Success",label:  "Customer Success"},
+    {value: "Engineering",label: "Engineering"},
+    {value: "Product management",label: "Product management"},
+    {value: "UX Design / Research",label: "UX Design / Research"},
+    {value: "Researcher",label: "Researcher"},
+    {value: "Operator",label: "Operator"},
+],
+role: [
+    {value: "Freelance / Self employed",label: "Freelance / Self employed"},
+    {value: "Individual Contributor",label: "Individual Contributor"},
+    {value: "Manager",label: "Manager"},
+    {value: "Director / Sr Director",label: "Director / Sr Director"},
+    {value:  "Head of Product / CPO",label:  "Head of Product / CPO"},
+    {value: "VP / Sr VP",label: "VP / Sr VP"},
+    {value: "C Level Founder / Operator",label: "C Level Founder / Operator"},
+    {value: "Others / Not Listed",label: "Others / Not Listed"},
+],
+audiencetype: [
+    { value: "Consumers / Users", label: "Consumers / Users" },
+    { value: "Professionals", label: "Professionals" },
+  ],
+  modeofconnect: [
+    { value: "Online", label: "Online" },
+    { value: "Inperson", label: "Inperson" },
+  ],
+};

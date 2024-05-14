@@ -43,7 +43,13 @@ export interface PprofileFormData {
     language: { value: string, label: string },
     homeowner: { value: string, label: string },
     webcam: { value: string, label: string },
+}
 
+export interface RprofileFormData {
+    professional: { value: string, label: string },
+    role: { value: string, label: string },
+    audiencetype: { value: string, label: string },
+    modeofconnect: { value: string, label: string },
 }
 
 // export interface PprofileFormData {
