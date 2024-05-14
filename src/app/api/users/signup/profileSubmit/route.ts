@@ -16,8 +16,8 @@ export async function POST(request: NextRequest) {
   // Defines an asynchronous POST request handler.
   try {
     const reqBody = await request.json();
-    const {professional, role, audiencetype, modeofconnect} = reqBody;
-    console.log(professional, role, audiencetype, modeofconnect);
+    const {professional, role, audiencetype, modeofconnect, problemstatement} = reqBody;
+    console.log(professional, role, audiencetype, modeofconnect, problemstatement);
     // Parses the request body to extract gender.
 
     // Extract user ID from the authentication token
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
     console.log(email);
     const userProfile = new researchersProfileSchema({
       email,
-      professional, role, audiencetype, modeofconnect
+      professional, role, audiencetype, modeofconnect, problemstatement
     });
 
     // Saves the new user profile to the database.

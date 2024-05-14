@@ -50,6 +50,7 @@ export interface RprofileFormData {
     role: { value: string, label: string },
     audiencetype: { value: string, label: string },
     modeofconnect: { value: string, label: string },
+    problemstatement: string,
 }
 
 // export interface PprofileFormData {

@@ -22,6 +22,10 @@ const researchersProfileSchema = new mongoose.Schema({
             type: String,
             required: [true, "Please select mode of connect"],
         },
+         problemstatement: {
+            type: String,
+             required: [true, "Please mention your problem statement"],
+         },
 })
 
 const User = mongoose.models.researchersProfileSchema || mongoose.model("researchersProfileSchema", researchersProfileSchema);

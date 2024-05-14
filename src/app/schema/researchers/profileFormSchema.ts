@@ -9,11 +9,16 @@ import * as yup from "yup";
             value: yup.string().required("Please select role"),
           }),
           audiencetype: yup.object({
-            value: yup.string().required("Please select audiencetype"),
+            value: yup.string().required("Please select audience type"),
           }),
           modeofconnect: yup.object({
-            value: yup.string().required("Please select modeofconnect"),
+            value: yup.string().required("Please select mode of connect"),
           }),
+          
+        problemstatement: yup.string()
+        .required("Problem statement is required")
+        .min(50)
+        .max(200),
 });
 
 export default profileFormSchema;

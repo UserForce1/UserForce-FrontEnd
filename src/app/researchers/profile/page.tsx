@@ -18,8 +18,10 @@ import { researchersFormData } from "@/constants/constants";
 //   gender: { value: string; label: string };
 // }
 
+
+
 export default function researchersProfile() {
-  const [data, setData] = useState("nothing");
+  
   // const schema = yup.object({
   //   gender: yup.object({
   //     value: yup.string().required("Please select a gender"),
@@ -36,11 +38,13 @@ export default function researchersProfile() {
   });
 
   const submitHandler = async (values: RprofileFormData) => {
+    console.log("inside submitHandler")
     const profileData = {
       professional: values.professional.value,
       role: values.role.value,
       audiencetype: values.audiencetype.value,
       modeofconnect: values.modeofconnect.value,
+      problemstatement: values.problemstatement,
     };
     try {
       const res = await axios.post(
@@ -56,6 +60,7 @@ export default function researchersProfile() {
       values.role.value,
       values.audiencetype.value,
       values.modeofconnect.value,
+      values.problemstatement,
     );
   };
 
@@ -157,6 +162,49 @@ export default function researchersProfile() {
                     {errors.modeofconnect?.value?.message}
                   </p>
                 </label>
+                
+              </div>
+              <div className="p-6 border-2 border-[#1553A4] sm:rounded-md w-full  mx-auto mb-6">
+                <div className="space-y-2 mb-2">
+                  <h2 className="md:text-xl text-2xl font-extrabold mb-2 text-blue-400">
+                  problem statement
+                  </h2>
+                  <p className="border border-[#1553A4]"></p>
+                  <p className="text-base leading-relaxed text-orange-400">
+                  Could you describe your problem statement in detail as we need to understand the minute part of it to assist you with your research & providing participants for your interviews which matches your requirement alternatively you can call us & explain the problem
+                  </p>
+                </div>
+                <label className="block mb-6">
+                  <span className="text-gray-700">Enter your problem statement</span>
+                  <Controller
+                    name={"problemstatement"} // for the gender field
+                    control={control} // obtained from the useForm hook
+                    render={({ field }) => {
+                      return (
+                        <textarea
+                          {...field}
+                          className="
+                          block
+                          w-full
+                          mt-1
+                          border-gray-300
+                          rounded-md
+                          shadow-sm
+                          focus:border-indigo-300
+                          focus:ring
+                          focus:ring-indigo-200
+                          focus:ring-opacity-50
+                          "
+                          placeholder="Enter your problem statement"
+                        />
+                      );
+                    }}
+                  />
+                   <p className="text-red-500">
+                    {errors.problemstatement?.message}
+                  </p>
+                </label>
+                
               </div>
               <div className="!mt-10 items-center justify-center flex">
                 <button
