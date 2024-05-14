@@ -16,6 +16,11 @@ export interface PsignInFormData {
     password: string
 }
 
+export interface RsignInFormData {
+    email: string,
+    password: string
+}
+
 export interface PprofileFormData {
     jobTitle: string,
     seniority:{value: string, label: string},

@@ -1,31 +1,54 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { FormEvent, useState } from "react";
 import {useRouter} from "next/navigation";
 import axios from "axios";
 
 import NavBar from "@/app/components/navbar";
+import signInFormSchema from "@/app/schema/researchers/signInFormSchema";
+import useForm from "@/app/hooks/useForm";
+import SignInForm from "@/app/components/forms/researchers/SignInForm";
 
-export default function RSIGNUP() {
-  const router = useRouter();
-    const [loading, setLoading] = React.useState(false);
-    const [user, setUser] = React.useState({
-        email: "",
-        password: "",
-    })
+const initialFormData = {
+  email: "",
+  password: "",
+};
 
-      const onLogin = async () => {
-        try {
-            setLoading(true);
-            const response = await axios.post("/api/users/login", user);
-            router.push("/dashboard");
-            
-        } catch (error:any) {
-            console.log("Login failed", error.message);
-            
-        }finally {
-            setLoading(false);
-        }
+export default function RSIGNIn() {
+  const [showpop, setShowpop] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [disableClientValidation, setDisableClientValidation] =
+    useState<boolean>(false);
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    const formData = getFormData();
+    console.log(formData);
+
+    // Validate form
+    if (!disableClientValidation) {
+      if (!(await validateForm())) return;
     }
+
+    try {
+      const response = await axios.post("/api/users/login", formData);
+      setShowpop(true);
+      router.push("/researchers/profile");
+    } catch (error: any) {
+      console.log("SignIn failed", error.message);
+    }
+  };
+
+  const { render, getFormData, setFormData, validateForm, resetForm } = useForm(
+    {
+      FormComponent: SignInForm,
+      initialFormData: initialFormData,
+      schema: signInFormSchema,
+      handleSubmit: handleSubmit,
+      isLoading: isLoading,
+    }
+  );
+
+  const router = useRouter();
+
   return (
     <>
       <div className="font-[sans-serif] text-[#333] bg-white min-h-screen  items-center justify-center ">
@@ -38,32 +61,11 @@ export default function RSIGNUP() {
         <div className="mx-4 mb-4 -mt-16 ">
          
            
-           <form className="space-y-6 max-w-md m-auto  w-full border-black border p-10 bg-white rounded-2xl">
+           <div className="space-y-6 max-w-md m-auto  w-full border-black border p-10 bg-white rounded-2xl">
               {/* <h3 className="md:text-4xl text-3xl font-extrabold mb-6 mb-8 max-md:text-center">
                 Sign in
               </h3> */}
-              <div>
-                <input
-                  name="email"
-                  type="email"
-                  required
-                  className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-[#1553A4]"
-                  placeholder="Email address"
-                  value={user.email}
-                  onChange={(e) => setUser({...user, email: e.target.value})}
-                />
-              </div>
-              <div>
-                <input
-                  name="password"
-                  type="password"
-                  required
-                  className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-[#1553A4]"
-                  placeholder="Password"
-                  value={user.password}
-                  onChange={(e) => setUser({...user, password: e.target.value})}
-                />
-              </div>
+              {render()}
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   {/* <input
@@ -85,9 +87,9 @@ export default function RSIGNUP() {
                   </a>
                 </div> */}
               </div>
-              <div className="!mt-10">
+              <div className="!mt-1">
                 <button
-                  onClick={onLogin}
+                  onClick={handleSubmit}
                   type="button"
                   className="w-full shadow-xl py-2.5 px-4 font-semibold rounded-full text-white hover:text-[#1553A4] bg-[#1553A4] border hover:border-[#1553A4] hover:bg-blue-100 focus:outline-none"
                 >
@@ -172,7 +174,7 @@ export default function RSIGNUP() {
                 Register here
               </a>
             </p>
-            </form>
+            </div>
             {/* <div className="!mt-10">
               <button
                 onClick={handleSubmit}
