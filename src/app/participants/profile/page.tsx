@@ -108,10 +108,10 @@ export default function participantsProfile() {
             <form onSubmit={handleSubmit(submitHandler)}>
               <div className="p-6 border-2 border-[#1553A4] sm:rounded-md w-full  mx-auto mb-6">
                 <div className="space-y-2 mb-2">
-                  <h2 className="md:text-xl text-2xl font-extrabold mb-2">
+                  <h2 className="md:text-xl text-2xl font-extrabold mb-2 text-blue-400">
                     Professional details
                   </h2>
-                  <p className="border border-black"></p>
+                  <p className="border border-[#1553A4]"></p>
                 </div>
                 <label className="block mb-6">
                   <span className="text-gray-700">Job title</span>
@@ -343,10 +343,10 @@ export default function participantsProfile() {
               </div>
               <div className="p-6 border-2 border-[#1553A4] sm:rounded-md w-full  mx-auto mb-6">
                 <div className="space-y-2 mb-2">
-                  <h2 className="md:text-xl text-2xl font-extrabold mb-2">
+                  <h2 className="md:text-xl text-2xl font-extrabold mb-2 text-blue-400">
                     Social media links
                   </h2>
-                  <p className="border border-black"></p>
+                  <p className="border border-[#1553A4]"></p>
                 </div>
                 <label className="block mb-6">
                   <span className="text-gray-700">LinkedIn profile</span>
@@ -439,11 +439,11 @@ export default function participantsProfile() {
               </div>
               <div className="p-6 border-2 border-[#1553A4] sm:rounded-md w-full  mx-auto mb-6">
                 <div className="space-y-2 mb-2">
-                  <h2 className="md:text-xl text-2xl font-extrabold mb-2">
+                  <h2 className="md:text-xl text-2xl font-extrabold mb-2 text-blue-400">
                     Demographic details(required)
                   </h2>
-                  <p className="border border-black"></p>
-                  <p className="text-base leading-relaxed">
+                  <p className="border border-[#1553A4]"></p>
+                  <p className="text-base leading-relaxed text-orange-400">
                     We'll use this information to match you with relevant
                     studies. Don't worry—we'll never sell your data!
                   </p>
@@ -601,10 +601,10 @@ export default function participantsProfile() {
               </div>
               <div className="p-6 border-2 border-[#1553A4] sm:rounded-md w-full  mx-auto mb-6">
                 <div className="space-y-2 mb-2">
-                  <h2 className="md:text-xl text-2xl font-extrabold mb-2">
+                  <h2 className="md:text-xl text-2xl font-extrabold mb-2 text-blue-400">
                   Additional information
                   </h2>
-                  <p className="border border-black"></p>
+                  <p className="border border-[#1553A4]"></p>
                 </div>
                 
                 <label className="block mb-6">
@@ -651,11 +651,11 @@ export default function participantsProfile() {
               </div>
               <div className="p-6 border-2 border-[#1553A4] sm:rounded-md w-full  mx-auto mb-6">
                 <div className="space-y-2 mb-2">
-                  <h2 className="md:text-xl text-2xl font-extrabold mb-2">
+                  <h2 className="md:text-xl text-2xl font-extrabold mb-2 text-blue-400">
                   Technical details(required)
                   </h2>
-                  <p className="border border-black"></p>
-                  <p className="text-base leading-relaxed">
+                  <p className="border border-[#1553A4]"></p>
+                  <p className="text-base leading-relaxed text-orange-400">
                   A computer with a webcam is required for most online studies. Don't have a webcam? You can still participate in phone and in-person studies.
                   </p>
                 </div>
