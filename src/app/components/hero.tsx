@@ -48,7 +48,7 @@ export default function Hero() {
             <img
               src="/HeroPage.jpeg"
               alt="banner img"
-              className="w-full h-full object-cover border border-white"
+              className="w-full h-full object-cover border-4 border-white"
             />
           </div>
         </div>

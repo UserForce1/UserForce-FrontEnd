@@ -27,13 +27,10 @@ export default function FAQ() {
                 </div>
                 <div className="ml-4">
                   <h3 className="text-lg font-semibold text-[#333]">
-                    How can I create an account?
+                  How can Userforce help us?
                   </h3>
                   <p className="text-base leading-relaxed mt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.
+                  UserForce is a SAAS platform designed to facilitate efficient and insightful user interviews for product managers, user researcher, operators & founders who are looking to talk to their users & customers & to validate their Product market fit.
                   </p>
                 </div>
               </div>
@@ -56,13 +53,10 @@ export default function FAQ() {
                 </div>
                 <div className="ml-4">
                   <h3 className="text-lg font-semibold text-[#333]">
-                    Is there a mobile app available?
+                  How can I sign up as researcher?
                   </h3>
                   <p className="text-base leading-relaxed mt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua Sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.
+                  Simply register yourself as a researcher & fill in the relevant details we will get back to you with matching testers.
                   </p>
                 </div>
               </div>
@@ -85,16 +79,14 @@ export default function FAQ() {
                 </div>
                 <div className="ml-4">
                   <h3 className="text-lg font-semibold text-[#333]">
-                    How can I reset my password?
+                  How can i earn money through Userforce?
                   </h3>
                   <p className="text-base leading-relaxed mt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                  Simply register yourself as a participant & fill in the relevant details & take part in interviews to get the maximum .
                   </p>
                 </div>
               </div>
-              <div className="flex items-start">
+              {/* <div className="flex items-start">
                 <div className="flex-shrink-0">
                   <svg
                     className="h-6 w-6 text-[#1553A4]"
@@ -122,7 +114,7 @@ export default function FAQ() {
                     magna aliqua.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

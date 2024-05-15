@@ -19,7 +19,7 @@ export default function CTA() {
             </p>
             <button 
             onClick={() => router.push("/signup")}
-            className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8">
+            className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8 hover:animate-bounce relative overflow-hidden">
               Start your research
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -35,18 +35,18 @@ export default function CTA() {
           </div>
           <div className="w-full h-full">
             <img
-              src="https://readymadeui.com/login-image.webp"
+              src="/Researcher.jpeg"
               alt="feature"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover border-4 border-gray-500"
             />
           </div>
         </div>
-        <div className="max-w-7xl w-full mx-auto grid md:grid-cols-2 justify-center items-center gap-10">
+        <div className="max-w-7xl w-full mx-auto grid md:grid-cols-2 justify-center items-center gap-10 mt-2 md:mt-0">
           <div className="w-full h-full">
             <img
-              src="https://readymadeui.com/login-image.webp"
+              src="/participant.jpeg"
               alt="feature"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover border-4 border-gray-500"
             />
           </div>
           <div>
