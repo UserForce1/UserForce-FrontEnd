@@ -187,7 +187,7 @@ export default function PSIGNUP() {
                   type="button"
                   onClick={
                     () => {setShowpop(false)
-                    router.push("/researchers/signin")}
+                    router.push("/participants/signin")}
                   }
                   className="px-6 py-2.5 mt-8 w-full rounded text-white text-sm font-semibold  focus:outline-none bg-[#1553A4] hover:text-[#1553A4] hover:bg-blue-100 border hover:border-[#1553A4]"
                 >

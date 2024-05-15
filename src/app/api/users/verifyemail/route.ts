@@ -1,6 +1,7 @@
 import { connect } from "@/dbConfig/dbConfig";
 import { NextRequest, NextResponse } from "next/server";
 import User from "@/models/userModel"
+import PUser from "@/models/participants/userModel"
 
 connect()
 
@@ -9,9 +10,14 @@ export async function POST(request: NextRequest) {
 
 // It extracts the token property from the JSON body of the incoming request.
         const reqBody = await request.json()
-        const {token} = reqBody
-
-        const user = await User.findOne({verifyToken: token, verifyTokenExpiry: {$gt: Date.now()}});
+        const {token,usertype} = reqBody
+        let user;
+if(usertype == "participants"){
+     user = await PUser.findOne({verifyToken: token, verifyTokenExpiry: {$gt: Date.now()}});
+}else{
+     user = await User.findOne({verifyToken: token, verifyTokenExpiry: {$gt: Date.now()}});
+}
+       
 
         if(!user){
             return NextResponse.json({error: "Invalid token"}, {status: 400})

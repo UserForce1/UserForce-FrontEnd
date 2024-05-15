@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import NavBar from "@/app/components/navbar";
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import profileFormSchema from "@/app/schema/researchers/profileFormSchema";
 import ProfileForm from "@/app/components/forms/participants/Profile";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -13,6 +13,7 @@ import { useForm, Controller } from "react-hook-form";
 import NavBarInternal from "@/app/components/navbarinternal";
 import { RprofileFormData } from "@/app/interfaces/FormData";
 import { researchersFormData } from "@/constants/constants";
+import Link from "next/link";
 
 // interface SelectField {
 //   gender: { value: string; label: string };
@@ -21,6 +22,8 @@ import { researchersFormData } from "@/constants/constants";
 
 
 export default function researchersProfile() {
+  const [loading, setLoading] = useState<boolean>(true);
+  const [isVerified, setIsVerified] = useState<boolean>(false);
   
   // const schema = yup.object({
   //   gender: yup.object({
@@ -64,11 +67,77 @@ export default function researchersProfile() {
     );
   };
 
+  const getUserDetails = async () => {
+    const res = await axios.get("/api/users/me");
+    setIsVerified(res.data.data.isVerified);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getUserDetails();
+  }, [isVerified]);
+
   return (
     <>
       <div className="font-[sans-serif] text-[#333] bg-white min-h-screen  items-center justify-center ">
         <NavBarInternal />
-        <div className="text-center  bg-blue-100 min-h-[160px] sm:p-6 p-4">
+         {loading ? <>
+         <div className="fixed inset-0 p-4 flex flex-wrap justify-center items-center w-full h-full  font-[sans-serif]">
+              <button
+                type="button"
+                className="px-6 py-2.5 rounded text-white text-sm tracking-wider font-semibold border-none outline-none bg-[#1553A4] hover:bg-[#1553A4] active:[#1553A4]"
+              >
+                Loading
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18px"
+                  fill="#fff"
+                  className="ml-2 inline animate-spin"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z"
+                    data-original="#000000"
+                  />
+                </svg>
+              </button>
+            </div>
+         </>:<>
+         {!isVerified ? <>
+          <div className="fixed inset-0 p-4 flex flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]">
+                  <div className="w-full max-w-md bg-white shadow-lg rounded-md p-6 relative">
+                    <div className="my-8 text-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-16 fill-red-500 inline"
+                        viewBox="0 0 286.054 286.054"
+                      >
+                        <path
+                          fill="#e2574c"
+                          d="M143.027 0C64.04 0 0 64.04 0 143.027c0 78.996 64.04 143.027 143.027 143.027 78.996 0 143.027-64.022 143.027-143.027C286.054 64.04 222.022 0 143.027 0zm0 259.236c-64.183 0-116.209-52.026-116.209-116.209S78.844 26.818 143.027 26.818s116.209 52.026 116.209 116.209-52.026 116.209-116.209 116.209zm.009-196.51c-10.244 0-17.995 5.346-17.995 13.981v79.201c0 8.644 7.75 13.972 17.995 13.972 9.994 0 17.995-5.551 17.995-13.972V76.707c-.001-8.43-8.001-13.981-17.995-13.981zm0 124.997c-9.842 0-17.852 8.01-17.852 17.86 0 9.833 8.01 17.843 17.852 17.843s17.843-8.01 17.843-17.843c-.001-9.851-8.001-17.86-17.843-17.86z"
+                          data-original="#e2574c"
+                        />
+                      </svg>
+                      <h4 className="text-xl text-[#333] font-semibold mt-6">
+                        Your email address is not verified,
+                        <br />
+                        please check your mail
+                      </h4>
+                    </div>
+                    <div className="text-right space-x-4"></div>
+                    <div className="flex max-sm:flex-col gap-4">
+                      <Link
+                        type="button"
+                        href="/researchers/signin"
+                        className="text-center px-6 py-2.5 rounded w-full text-white text-sm font-semibold border-none outline-none bg-red-500 hover:bg-red-600 active:bg-red-500"
+                      >
+                        Go back to sign in
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+         </>:<>
+         <div className="text-center  bg-blue-100 min-h-[160px] sm:p-6 p-4">
           <h4 className="md:text-2xl text-xl font-extrabold mb-6">
             We have some questions to help you get started.
           </h4>
@@ -217,6 +286,9 @@ export default function researchersProfile() {
             </form>
           </div>
         </div>
+         </>}
+         </>}
+        
       </div>
     </>
   );

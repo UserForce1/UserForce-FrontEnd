@@ -35,7 +35,8 @@ export async function POST(request: NextRequest){
             id: user._id,
             firstname: user.firstname,
             lastname: user.lastname,
-            email: user.email
+            email: user.email,
+            isVerified: user.isVerified
         }
 
         // Create a token with expiration of 1 day
@@ -45,6 +46,7 @@ export async function POST(request: NextRequest){
         const response = NextResponse.json({
             message: "Login successful",
             success: true,
+            data: tokenData,
         })
 
         // Set the token as an HTTP-only cookie
