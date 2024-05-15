@@ -16,12 +16,13 @@ const initialFormData = {
 
 export default function PSIGNIN() {
   const router = useRouter();
-  const [showpop, setShowpop] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const [disableClientValidation, setDisableClientValidation] =
     useState<boolean>(false);
 
     const handleSubmit = async (e: FormEvent) => {
+      setLoading(true);
       e.preventDefault();
       const formData = getFormData();
       console.log(formData);
@@ -36,9 +37,10 @@ export default function PSIGNIN() {
           "/api/users/login/participants",
           formData
         );
-        setShowpop(true);
+        setLoading(false);
         router.push("/participants/profile");
       } catch (error: any) {
+        setLoading(false);
         console.log("SignIn failed", error.message);
       }
     };
@@ -57,6 +59,30 @@ export default function PSIGNIN() {
     <>
       <div className="font-[sans-serif] text-[#333] bg-white min-h-screen  items-center justify-center ">
         <NavBar />
+        {loading && (
+          <>
+            <div className="fixed inset-0 p-4 flex flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]">
+              <button
+                type="button"
+                className="px-6 py-2.5 rounded text-white text-sm tracking-wider font-semibold border-none outline-none bg-[#1553A4] hover:bg-[#1553A4] active:[#1553A4]"
+              >
+                Signing in
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18px"
+                  fill="#fff"
+                  className="ml-2 inline animate-spin"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z"
+                    data-original="#000000"
+                  />
+                </svg>
+              </button>
+            </div>
+          </>
+        )}
         <div className="sm:w-1/2 max-w-4xl items-center justify-center mx-auto mt-10 px-6">
           <div className="items-center gap-4 max-w-7xl w-full">
             {/* <div className="lg:h-[400px] md:h-[300px] max-md:mt-10">

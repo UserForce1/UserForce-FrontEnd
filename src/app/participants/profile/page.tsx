@@ -116,7 +116,7 @@ export default function participantsProfile() {
                 type="button"
                 className="px-6 py-2.5 rounded text-white text-sm tracking-wider font-semibold border-none outline-none bg-[#1553A4] hover:bg-[#1553A4] active:[#1553A4]"
               >
-                Loading
+                Verifying email
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18px"

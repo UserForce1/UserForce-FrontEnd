@@ -21,6 +21,7 @@ const participantProfileSchema = new mongoose.Schema({
     workemail: {
         type: String,
         required: [true, "Please provide workemail"],
+        unique: true,
     },
     company: {
         type: String,
