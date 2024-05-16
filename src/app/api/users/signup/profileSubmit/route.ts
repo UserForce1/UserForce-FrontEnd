@@ -2,9 +2,6 @@ import { connect } from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
 import researchersProfile from "@/models/profileModel";
 import { NextRequest, NextResponse } from "next/server";
-import bcryptjs from "bcryptjs";
-import { sendEmail } from "@/app/helpers/participants/mailer";
-import axios from "axios";
 import { getDataFromToken } from "@/helper/getDataFromToken";
 
 connect();

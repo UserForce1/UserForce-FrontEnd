@@ -18,7 +18,7 @@ import * as yup from "yup";
         problemstatement: yup.string()
         .required("Problem statement is required")
         .min(50)
-        .max(200),
+        .max(1000),
 });
 
 export default profileFormSchema;

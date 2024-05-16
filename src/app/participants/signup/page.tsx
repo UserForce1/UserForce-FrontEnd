@@ -21,7 +21,7 @@ export default function PSIGNUP() {
   const [disableClientValidation, setDisableClientValidation] =
     useState<boolean>(false);
   const handleSubmit = async (e: FormEvent) => {
-    setLoading(true);
+   
     e.preventDefault();
     const formData = getFormData();
     console.log(formData);
@@ -30,7 +30,7 @@ export default function PSIGNUP() {
     if (!disableClientValidation) {
       if (!(await validateForm())) return;
     }
-
+    setLoading(true);
     try {
       const response = await axios.post(
         "/api/users/signup/participants/",

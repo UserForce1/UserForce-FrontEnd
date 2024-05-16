@@ -20,7 +20,7 @@ export default function RSIGNIn() {
   const [disableClientValidation, setDisableClientValidation] =
     useState<boolean>(false);
   const handleSubmit = async (e: FormEvent) => {
-    setLoading(true);
+   
     e.preventDefault();
     const formData = getFormData();
     console.log(formData);
@@ -29,7 +29,7 @@ export default function RSIGNIn() {
     if (!disableClientValidation) {
       if (!(await validateForm())) return;
     }
-
+    setLoading(true);
     try {
       const response = await axios.post("/api/users/login", formData);
       setLoading(false);

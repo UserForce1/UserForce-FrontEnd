@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 
-export default function NavBarInternal() {
+export default function NavBarInternalP() {
   var toggleOpen = null;
   var toggleClose = null;
   if (typeof window !== "undefined") {
@@ -37,7 +37,7 @@ export default function NavBarInternal() {
   }
 
   const getUserDetails = async () => {
-    const res = await axios.get('/api/users/me')
+    const res = await axios.get('/api/users/me/participants')
     setData(res.data.data.email)
   }
 

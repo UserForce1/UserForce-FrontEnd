@@ -22,6 +22,7 @@ import Link from "next/link";
 
 export default function ResearchersProfile() {
   const [loading, setLoading] = useState<boolean>(true);
+  const [profileSubmit, setProfileSubmit] = useState<boolean>(false);
   const [isVerified, setIsVerified] = useState<boolean>(false);
   const [isProfileSubmitted, setIsProfileSubmitted] = useState<boolean>(false);
   
@@ -51,12 +52,15 @@ export default function ResearchersProfile() {
       problemstatement: values.problemstatement,
     };
     try {
+      setProfileSubmit(true);
       const res = await axios.post(
         "/api/users/signup/profileSubmit",
         profileData
       );
       console.log(res);
+      setProfileSubmit(false);
     } catch (error: any) {
+      setProfileSubmit(false);
       console.log("failed", error.message);
     }
     console.log(
@@ -78,7 +82,7 @@ export default function ResearchersProfile() {
 
   useEffect(() => {
     getUserDetails();
-  }, [isVerified]);
+  }, [isVerified,profileSubmit]);
 
   return (
     <>
@@ -316,7 +320,28 @@ export default function ResearchersProfile() {
         
          </>}
          </>}
-         
+         {profileSubmit && <>
+          <div className="fixed inset-0 p-4 flex flex-wrap justify-center items-center w-full h-full  font-[sans-serif]">
+              <button
+                type="button"
+                className="px-6 py-2.5 rounded text-white text-sm tracking-wider font-semibold border-none outline-none bg-[#1553A4] hover:bg-[#1553A4] active:[#1553A4]"
+              >
+                Submitting, Please wait...
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18px"
+                  fill="#fff"
+                  className="ml-2 inline animate-spin"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 22c5.421 0 10-4.579 10-10h-2c0 4.337-3.663 8-8 8s-8-3.663-8-8c0-4.336 3.663-8 8-8V2C6.579 2 2 6.58 2 12c0 5.421 4.579 10 10 10z"
+                    data-original="#000000"
+                  />
+                </svg>
+              </button>
+            </div>
+         </>}
       </div>
     </>
   );
