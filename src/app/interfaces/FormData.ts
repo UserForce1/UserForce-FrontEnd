@@ -23,7 +23,7 @@ export interface RsignInFormData {
 
 export interface PprofileFormData {
     jobTitle: string,
-    seniority:{value: string, label: string},
+    seniority: {value: string, label: string},
     skills: string,
     workemail: string,
     company: string,
@@ -37,7 +37,7 @@ export interface PprofileFormData {
     age: number,
     city: string,
     gender: { value: string, label: string },
-    income: string,
+    income: number,
     education: { value: string, label: string },
     maritalstatus: { value: string, label: string },
     language: { value: string, label: string },

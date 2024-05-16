@@ -5,7 +5,6 @@ import axios from "axios";
 import NavBar from "@/app/components/navbar";
 import React, { FormEvent, useEffect, useState } from "react";
 import profileFormSchema from "@/app/schema/participants/profileFormSchema";
-import ProfileForm from "@/app/components/forms/participants/Profile";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Select from "react-select";
