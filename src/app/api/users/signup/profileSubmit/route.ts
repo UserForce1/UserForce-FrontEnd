@@ -1,6 +1,6 @@
 import { connect } from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
-import researchersProfileSchema from "@/models/profileModel";
+import researchersProfile from "@/models/profileModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 import { sendEmail } from "@/app/helpers/participants/mailer";
@@ -35,13 +35,17 @@ export async function POST(request: NextRequest) {
 
     const email = user.email;
     console.log(email);
-    const userProfile = new researchersProfileSchema({
+    const userProfile = new researchersProfile({
       email,
       professional, role, audiencetype, modeofconnect, problemstatement
     });
 
     // Saves the new user profile to the database.
     const savedProfile = await userProfile.save();
+
+    // Update user properties and save the changes
+    user.isProfileSubmitted = true;
+    await user.save();
 
     return NextResponse.json({
       message: "profile saved successfully",

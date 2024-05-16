@@ -85,7 +85,7 @@ export default function RSIGNUP() {
         )}
         <div className="text-center  bg-blue-100 min-h-[160px] sm:p-6 p-4">
           <h4 className="md:text-4xl text-3xl font-extrabold mb-6">
-            Create your free account
+            Create your reseacher account
           </h4>
         </div>
 

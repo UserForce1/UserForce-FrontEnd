@@ -596,7 +596,7 @@ export default function ProfileForm({
             <p className="border border-black"></p>
             <p className="text-base leading-relaxed">
               A computer with a webcam is required for most online studies.
-              Don't have a webcam? You can still participate in phone and
+              Don&apos;t have a webcam? You can still participate in phone and
               in-persion studies.
             </p>
           </div>

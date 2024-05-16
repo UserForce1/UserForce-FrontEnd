@@ -82,7 +82,7 @@ export default function FAQ() {
                   How can i earn money through Userforce?
                   </h3>
                   <p className="text-base leading-relaxed mt-4">
-                  Simply register yourself as a participant & fill in the relevant details & take part in interviews to get the maximum .
+                  You need to register yourself as a participant & fill in the relevant details & take part in interviews to get the maximum.
                   </p>
                 </div>
               </div>

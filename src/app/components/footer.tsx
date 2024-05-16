@@ -137,7 +137,7 @@ export default function FOOTER() {
                     Linkedin
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     href="javascript:void(0)"
                     className="hover:text-[#1553A4] flex items-center gap-2"
@@ -154,7 +154,7 @@ export default function FOOTER() {
                     </svg>{" "}
                     X
                   </a>
-                </li>
+                </li> */}
                 {/* <li><a href="javascript:void(0)" className="hover:text-blue-600 flex items-center gap-2"><svg
                     xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-[10px] -rotate-90"
                     viewBox="0 0 24 24">

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const researchersProfileSchema = new mongoose.Schema({
+const researchersProfile = new mongoose.Schema({
     email: {
         type: String,
         required: [true, "Please provide email"],
@@ -28,6 +28,6 @@ const researchersProfileSchema = new mongoose.Schema({
          },
 })
 
-const User = mongoose.models.researchersProfileSchema || mongoose.model("researchersProfileSchema", researchersProfileSchema);
+const User = mongoose.models.researchersProfile || mongoose.model("researchersProfile", researchersProfile);
 
 export default User;
