@@ -19,7 +19,7 @@ import Link from "next/link";
 //   gender: { value: string; label: string };
 // }
 
-export default function participantsProfile() {
+export default function ParticipantsProfile() {
   const [loading, setLoading] = useState<boolean>(true);
   const [isVerified, setIsVerified] = useState<boolean>(false);
   // const schema = yup.object({

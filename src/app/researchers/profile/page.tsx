@@ -21,7 +21,7 @@ import Link from "next/link";
 
 
 
-export default function researchersProfile() {
+export default function ResearchersProfile() {
   const [loading, setLoading] = useState<boolean>(true);
   const [isVerified, setIsVerified] = useState<boolean>(false);
   const [isProfileSubmitted, setIsProfileSubmitted] = useState<boolean>(false);
