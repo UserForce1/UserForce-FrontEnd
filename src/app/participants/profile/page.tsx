@@ -9,7 +9,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Select from "react-select";
 import { useForm, Controller } from "react-hook-form";
-import NavBarInternal from "@/app/components/navbarinternal";
+import NavBarInternalP from "@/app/components/navbarinternalP";
 import { PprofileFormData } from "@/app/interfaces/FormData";
 import { participantsFormData } from "@/constants/constants";
 import Link from "next/link";
@@ -108,7 +108,7 @@ export default function ParticipantsProfile() {
   return (
     <>
       <div className="font-[sans-serif] text-[#333] bg-white min-h-screen  items-center justify-center ">
-        <NavBarInternal />
+        <NavBarInternalP />
         {loading ? (
           <>
             <div className="fixed inset-0 p-4 flex flex-wrap justify-center items-center w-full h-full  font-[sans-serif]">
