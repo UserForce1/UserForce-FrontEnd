@@ -33,6 +33,7 @@ export default function ParticipantsProfile() {
     handleSubmit,
     formState: { errors },
   } = useForm<PprofileFormData>({
+    // @ts-expect-error ts(2322)
     resolver: yupResolver(profileFormSchema),
   });
 

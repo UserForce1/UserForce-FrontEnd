@@ -5,7 +5,6 @@ import axios from "axios";
 import NavBar from "@/app/components/navbar";
 import React, { FormEvent, useEffect, useState } from "react";
 import profileFormSchema from "@/app/schema/researchers/profileFormSchema";
-import ProfileForm from "@/app/components/forms/participants/Profile";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Select from "react-select";
@@ -38,6 +37,7 @@ export default function ResearchersProfile() {
     handleSubmit,
     formState: { errors },
   } = useForm<RprofileFormData>({
+    // @ts-expect-error ts(2322)
     resolver: yupResolver(profileFormSchema),
   });
 
