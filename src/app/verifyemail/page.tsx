@@ -64,7 +64,7 @@ export default function VerifyEmailPage() {
                     <>
                       <Link
                         type="button"
-                        href="/participant/signin"
+                        href="/participants/signin"
                         className="text-center px-6 py-2.5 rounded w-full text-white text-sm font-semibold border-none outline-none bg-[#1553A4] hover:bg-[#1553A4] active:bg-[#1553A4]"
                       >
                         Go to my profile

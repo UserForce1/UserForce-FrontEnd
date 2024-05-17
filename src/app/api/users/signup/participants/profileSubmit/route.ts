@@ -1,10 +1,7 @@
 import { connect } from "@/dbConfig/dbConfig";
 import User from "@/models/participants/userModel";
 import participantProfileSchema from "@/models/participants/profileModel";
-import { NextRequest, NextResponse } from "next/server";
-import bcryptjs from "bcryptjs";
-import { sendEmail } from "@/app/helpers/participants/mailer";
-import axios from "axios";
+import { NextRequest, NextResponse } from "next/server"
 import { getDataFromToken } from "@/helper/getDataFromToken";
 
 connect();
@@ -39,13 +36,15 @@ export async function POST(request: NextRequest) {
       email,
       jobTitle,
       seniority,
-      skills, workemail, company, companysize, worksetting, industry, smallbusinessowner, linkedinprofile, facebookprofile, otherprofile,
-      age, city, gender, income, education, maritalstatus,
-      language, homeowner, webcam
+      skills, workemail, company, companysize, worksetting, industry, smallbusinessowner, linkedinprofile, facebookprofile, otherprofile, age, city, gender, income, education, maritalstatus, language, homeowner, webcam
     });
 
     // Saves the new user profile to the database.
     const savedProfile = await userProfile.save();
+
+    // Update user properties and save the changes
+    user.isProfileSubmitted = true;
+    await user.save();
 
     return NextResponse.json({
       message: "profile saved successfully",
