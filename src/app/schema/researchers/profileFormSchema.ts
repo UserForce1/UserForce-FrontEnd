@@ -18,7 +18,7 @@ import * as yup from "yup";
         problemstatement: yup.string()
         .required("Problem statement is required")
         .min(50)
-        .max(1000),
+        .max(1000,"As a 1% operator, we truly understand the power of constraint thinking. Let's keep it concise – limit your words to 500. We value your input!"),
 });
 
 export default profileFormSchema;

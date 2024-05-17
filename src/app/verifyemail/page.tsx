@@ -67,7 +67,7 @@ export default function VerifyEmailPage() {
                         href="/participants/signin"
                         className="text-center px-6 py-2.5 rounded w-full text-white text-sm font-semibold border-none outline-none bg-[#1553A4] hover:bg-[#1553A4] active:bg-[#1553A4]"
                       >
-                        Go to my profile
+                        Sign in
                       </Link>
                     </>
                   ) : (
@@ -77,7 +77,7 @@ export default function VerifyEmailPage() {
                         href="/researchers/signin"
                         className="text-center px-6 py-2.5 rounded w-full text-white text-sm font-semibold border-none outline-none bg-[#1553A4] hover:bg-[#1553A4] active:bg-[#1553A4]"
                       >
-                        Go to my profile
+                        Sign in
                       </Link>
                     </>
                   )}
@@ -116,7 +116,7 @@ export default function VerifyEmailPage() {
                         href="/participant/signin"
                         className="text-center px-6 py-2.5 rounded w-full text-white text-sm font-semibold border-none outline-none bg-[#1553A4] hover:bg-[#1553A4] active:bg-[#1553A4]"
                       >
-                        Go to my profile
+                        Sign in
                       </Link>
                     </>
                   ) : (
@@ -126,7 +126,7 @@ export default function VerifyEmailPage() {
                         href="/researchers/signin"
                         className="text-center px-6 py-2.5 rounded w-full text-white text-sm font-semibold border-none outline-none bg-[#1553A4] hover:bg-[#1553A4] active:bg-[#1553A4]"
                       >
-                        Go to my profile
+                        Sign in
                       </Link>
                     </>
                   )}

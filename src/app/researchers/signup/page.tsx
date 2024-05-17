@@ -209,9 +209,8 @@ export default function RSIGNUP() {
               </svg>
               <div className="mt-8">
                 <h3 className="text-2xl font-semibold flex-1">Awesome!</h3>
-                <p className="text-base leading-relaxed text-gray-700 mt-2">
-                  Your account has been created. <br />
-                  Check your mail for details and verify your email
+                <p className="text-base leading-relaxed font-extrabold text-gray-700 mt-2">
+                Please check your email for details and verify your email to begin with userforce
                 </p>
                 <button
                   type="button"

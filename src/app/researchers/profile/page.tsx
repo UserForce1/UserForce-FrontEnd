@@ -152,7 +152,7 @@ export default function ResearchersProfile() {
       <div className="w-full max-w-lg bg-white shadow-lg rounded-md p-6 relative">
         
         <div className="my-8 text-center">
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-16 shrink-0 fill-[#333] inline" viewBox="0 0 512 512">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-16 shrink-0 fill-[#1553A4] inline" viewBox="0 0 512 512">
             <path
               d="M383.841 171.838c-7.881-8.31-21.02-8.676-29.343-.775L221.987 296.732l-63.204-64.893c-8.005-8.213-21.13-8.393-29.35-.387-8.213 7.998-8.386 21.137-.388 29.35l77.492 79.561a20.687 20.687 0 0 0 14.869 6.275 20.744 20.744 0 0 0 14.288-5.694l147.373-139.762c8.316-7.888 8.668-21.027.774-29.344z"
               data-original="#000000" />
@@ -160,9 +160,9 @@ export default function ResearchersProfile() {
               d="M256 0C114.84 0 0 114.84 0 256s114.84 256 256 256 256-114.84 256-256S397.16 0 256 0zm0 470.487c-118.265 0-214.487-96.214-214.487-214.487 0-118.265 96.221-214.487 214.487-214.487 118.272 0 214.487 96.221 214.487 214.487 0 118.272-96.215 214.487-214.487 214.487z"
               data-original="#000000" />
           </svg>
-          <h4 className="text-2xl text-[#333] font-semibold mt-6">Profile Successfully Submitted!</h4>
-          <p className="text-sm text-black mt-4">We will review your profile and get back to you with matching interviews.</p>
-          <p className="text-sm text-black mt-4">Thank you!</p>
+          <h4 className="text-2xl text-[#1553A4] font-semibold mt-6">Profile Successfully Submitted!</h4>
+          <p className="text-sm text-[#1553A4] mt-4">Demographics captured! We'll reach out via email with suitable matches.</p>
+          <p className="text-sm text-[#1553A4] mt-4">Thank you!</p>
         </div>
       </div>
     </div>
@@ -270,11 +270,11 @@ export default function ResearchersProfile() {
                   </h2>
                   <p className="border border-[#1553A4]"></p>
                   <p className="text-base leading-relaxed text-orange-400">
-                  Could you please provide a brief description of your issue, along with the demographics of your participants? This will help us tailor our user interviews to better suit your needs. Alternatively, feel free to call us to discuss your problem further.
+                  Could you kindly share a brief overview of your product or feature you're planning to launch? Additionally, we'd like to know the demographics of the audience you're aiming to interview. Understanding their demographics and experiences will enable us to customize our user interviews to meet your specific requirements. Alternatively, feel free to give us a call, and we'll gladly listen to your needs.
                   </p>
                 </div>
                 <label className="block mb-6">
-                  <span className="text-gray-700">Enter your problem statement</span>
+                  <span className="text-gray-700">Drop your thoughts below!</span>
                   <Controller
                     name={"problemstatement"} // for the gender field
                     control={control} // obtained from the useForm hook
@@ -294,7 +294,7 @@ export default function ResearchersProfile() {
                           focus:ring-indigo-200
                           focus:ring-opacity-50
                           "
-                          placeholder="Enter your problem statement"
+                          placeholder="Drop your thoughts below!"
                         />
                       );
                     }}
