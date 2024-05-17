@@ -38,11 +38,12 @@ export const sendEmail = async({email, emailType, userId}:any) =>{
 
         // Compose email options
               const mailOptions = {
-                from: 'neman.abrar@gmail.com',
+                from: 'info@userforce.in',
                 to: email,
-                subject: emailType === "VERIFY" ? "Verify your email" : "Reset your password",
-                html: `<p>Click <a href="${process.env.domain}/verifyemail?token=${hashedToken}=participants">here</a> to 
-                ${emailType === "VERIFY" ? "Verify your email" : "Reset your password"}</p>`
+                subject: emailType === "VERIFY" ? "Welcome to UserForce, Verify your email" : "Reset your password",
+                html: `<p>Welcome! We're thrilled that you've joined our participant community. Click <a href="${process.env.domain}/verifyemail?token=${hashedToken}=participants">here</a> to 
+                ${emailType === "VERIFY" ? "Verify your email" : "Reset your password"}</p>
+                <p>UserForce team</p>`
               }
 
         // Send the email
