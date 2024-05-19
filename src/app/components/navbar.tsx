@@ -25,7 +25,7 @@ export default function NavBar() {
     <header className="py-4 px-4 sm:px-10 bg-white z-50 relative shadow-md">
       <div className="max-w-7xl w-full mx-auto flex flex-wrap items-center gap-4">
         <a href="/">
-          <img src="/Logo.svg" alt="logo" className="w-40" />
+          <img src="/Logo.svg" alt="logo" className="w-full" />
         </a>
 
         <div
