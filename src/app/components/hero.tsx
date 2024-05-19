@@ -4,9 +4,9 @@ export default function Hero() {
   const router = useRouter();
   return (
     <div className="min-h-[500px] bg-blue-100 px-4 sm:px-10">
-      <div className="max-w-7xl w-full mx-auto py-16">
+      <div className="max-w-7xl w-full mx-auto sm:py-28 py-16">
         <div className="grid lg:grid-cols-2 justify-center items-center gap-10">
-          <div>
+          <div className="">
             <h2 className="md:text-4xl text-3xl font-extrabold mb-6">
               We bridge the gap between researchers and participants to help you
               with your market fit

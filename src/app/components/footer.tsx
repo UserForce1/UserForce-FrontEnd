@@ -9,8 +9,7 @@ export default function FOOTER() {
                 <img src="Logo.svg" alt="logo" className="w-40 mb-6" />
               </a>
               <p className="text-base leading-relaxed mb-2">
-                We bridge the gap between researchers and participants to help
-                you with your market fit.
+              We bridge the gap between researchers and participants to help you with your discovery.
               </p>
             </div>
             <div>
@@ -106,7 +105,8 @@ export default function FOOTER() {
               <ul className="space-y-4">
                 <li>
                   <a
-                    href="javascript:void(0)"
+                    href="https://www.linkedin.com/company/userforce/"
+                    target="_blank"
                     className="hover:text-[#1553A4] flex items-center gap-2"
                   >
                     <svg
