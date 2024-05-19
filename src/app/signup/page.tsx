@@ -56,8 +56,8 @@ export default function SIGNUP() {
             className="bg-[#F9F9F9] cursor-pointer max-sm:px-8 px-12 py-6 w-full rounded text-black shadow-[0_20px_50px_rgb(59,130,246,0.4)] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-75 duration-300 focus:bg-transparent focus:text-rose-600 ">
               <div className=" py-2">
                 <img
-                  src="https://readymadeui.com/contact.webp"
-                  className="w-full object-contain rounded-md"
+                  src="sresearch.png"
+                  className="w-full object-contain border-2 border-gray-500"
                 />
               </div>
               <h2 className="md:text-4xl text-3xl font-extrabold mb-6">
