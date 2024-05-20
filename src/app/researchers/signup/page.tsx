@@ -7,6 +7,7 @@ import React, { FormEvent, useState } from "react";
 import signUpFormSchema from "@/app/schema/researchers/signUpFormSchema";
 import useForm from "@/app/hooks/useForm";
 import SignUpForm from "@/app/components/forms/researchers/SignupForm";
+import toast from "react-hot-toast";
 
 const initialFormData = {
   firstname: "",
@@ -39,6 +40,19 @@ export default function RSIGNUP() {
       //router.push("/mailpopup");
     } catch (error: any) {
       setLoading(false);
+      toast.custom(<div className="shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] text-black flex w-max max-w-sm rounded overflow-hidden font-[sans-serif] mt-2"
+        role="alert">
+        <div className="flex items-center px-5 bg-red-500">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 shrink-0 fill-white inline" viewBox="0 0 32 32">
+            <path
+              d="M16 1a15 15 0 1 0 15 15A15 15 0 0 0 16 1zm6.36 20L21 22.36l-5-4.95-4.95 4.95L9.64 21l4.95-5-4.95-4.95 1.41-1.41L16 14.59l5-4.95 1.41 1.41-5 4.95z"
+              data-original="#ea2d3f" />
+          </svg>
+        </div>
+        <div className="py-2.5 text-base mx-4">
+          <p className="font-semibold">{error.response.data.error}</p>
+        </div>
+      </div>);
       console.log("Signup failed", error.message);
     }
   };
