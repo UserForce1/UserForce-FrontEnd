@@ -10,7 +10,6 @@ const signInFormSchema = yup.object().shape({
         .email('Invalid Email Address'),
     password: yup.string()
         .label('Password')
-        .password()
         .required()
 });
 

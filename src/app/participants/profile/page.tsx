@@ -196,6 +196,7 @@ export default function ParticipantsProfile() {
               data-original="#000000" />
           </svg>
           <h4 className="text-2xl text-[#1553A4] font-semibold mt-6">Thank you, {user}!</h4>
+          <p className="text-base leading-relaxed text-[#1553A4] mt-4">Demographics have been captured.</p>
           <p className="text-base leading-relaxed text-[#1553A4] mt-4">We are delighted to have you join UserForce.</p>
           <p className="text-base leading-relaxed text-[#1553A4] mt-4">Your feedback will be invaluable in helping operators create better products & features.</p>
         </div>

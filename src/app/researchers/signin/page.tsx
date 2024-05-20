@@ -7,6 +7,7 @@ import NavBar from "@/app/components/navbar";
 import signInFormSchema from "@/app/schema/researchers/signInFormSchema";
 import useForm from "@/app/hooks/useForm";
 import SignInForm from "@/app/components/forms/researchers/SignInForm";
+import toast from "react-hot-toast";
 
 const initialFormData = {
   email: "",
@@ -32,10 +33,38 @@ export default function RSIGNIn() {
     setLoading(true);
     try {
       const response = await axios.post("/api/users/login", formData);
+      toast.custom(<div className="shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] text-black flex w-max max-w-sm rounded overflow-hidden"
+      role="alert">
+      <div className="flex items-center px-4 bg-green-500">
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 shrink-0 fill-white inline" viewBox="0 0 512 512">
+          <ellipse cx="256" cy="256" data-original="#000" rx="256" ry="255.832" />
+          <path className="fill-green-500"
+            d="m235.472 392.08-121.04-94.296 34.416-44.168 74.328 57.904 122.672-177.016 46.032 31.888z"
+            data-original="#000" />
+        </svg>
+      </div>
+      <div className="py-2.5 sm:inline text-sm font-semibold mx-4">
+        <p>{response.data.message}</p>
+        {/* <p className="text-xs text-gray-400">Some important information will appear here</p> */}
+      </div>
+    </div>)
       setLoading(false);
       router.push("/researchers/profile");
     } catch (error: any) {
       setLoading(false);
+      toast.custom(<div className="shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] text-black flex w-max max-w-sm rounded overflow-hidden font-[sans-serif] mt-2"
+        role="alert">
+        <div className="flex items-center px-5 bg-red-500">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 shrink-0 fill-white inline" viewBox="0 0 32 32">
+            <path
+              d="M16 1a15 15 0 1 0 15 15A15 15 0 0 0 16 1zm6.36 20L21 22.36l-5-4.95-4.95 4.95L9.64 21l4.95-5-4.95-4.95 1.41-1.41L16 14.59l5-4.95 1.41 1.41-5 4.95z"
+              data-original="#ea2d3f" />
+          </svg>
+        </div>
+        <div className="py-2.5 text-base mx-4">
+          <p className="font-semibold">{error.response.data.error}</p>
+        </div>
+      </div>);
       console.log("SignIn failed", error.message);
     }
   };
