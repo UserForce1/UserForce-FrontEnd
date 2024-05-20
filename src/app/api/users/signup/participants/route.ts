@@ -39,9 +39,9 @@ export async function POST(request: NextRequest){
 
 // Saves the new user to the database.
         const savedUser = await newUser.save()
-
+        console.log(name)
         await sendEmail({email, emailType: "VERIFY",
-        userId: savedUser._id})
+        userId: savedUser._id, firstName: name})
         
         return NextResponse.json({
             message: "User created successfully",

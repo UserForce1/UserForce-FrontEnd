@@ -163,7 +163,7 @@ export default function ResearchersProfile() {
               data-original="#000000" />
           </svg>
           <h4 className="text-2xl text-[#1553A4] font-semibold mt-6">Thank you {user}!</h4>
-          <p className="text-sm text-[#1553A4] mt-4">Demographics have been captured, We'll reach out to you via email with suitable matches.
+          <p className="text-base leading-relaxed text-[#1553A4] mt-4">Demographics have been captured, We'll reach out to you via email with suitable matches.
 </p>
           {/* <p className="text-sm text-[#1553A4] mt-4">Thank you!</p> */}
         </div>
