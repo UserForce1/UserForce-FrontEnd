@@ -273,7 +273,7 @@ export default function ResearchersProfile() {
                   </h2>
                   <p className="border border-[#1553A4]"></p>
                   <p className="text-base leading-relaxed text-orange-400">
-                  Could you kindly share a brief overview of your product or feature you're planning to launch? Additionally, we'd like to know the demographics of the audience you're aiming to interview. Understanding their demographics and experiences will enable us to customize our user interviews to meet your specific requirements. Alternatively, feel free to give us a call, and we'll gladly listen to your needs.
+                  Could you kindly share a brief overview of your product or feature you're planning to launch? Additionally, we'd like to know the demographics of the audience you're aiming to interview. Understanding their demographics and experiences will enable us to customize our user interviews to meet your specific requirements.
                   </p>
                 </div>
                 <label className="block mb-6">

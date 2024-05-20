@@ -38,9 +38,12 @@ export const sendEmail = async({email, emailType, userId, name}:any) =>{
 
         // Compose email options
               const mailOptions = {
-                from: 'info@userforce.in',
+                from: {
+                  address: 'info@userforce.in',
+                  name: "Userforce"
+                },
                 to: email,
-                subject: emailType === "VERIFY" ? `${name}, Welcome to UserForce, Verify your email` : "Reset your password",
+                subject: emailType === "VERIFY" ? `${name}, Welcome to UserForce!` : "Reset your password",
                 html: `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
                 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
                 
@@ -250,7 +253,7 @@ export const sendEmail = async({email, emailType, userId, name}:any) =>{
                                             <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Cabin',sans-serif;" align="left">
                 
                                               <div class="v-color" style="font-size: 14px; color: #e5eaf5; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                                <p style="font-size: 14px; line-height: 140%;"><strong>T H A N K S&nbsp; &nbsp;F O R&nbsp; &nbsp;S I G N I N G&nbsp; &nbsp;U P !</strong></p>
+                                                <p style="font-size: 14px; line-height: 140%;"><strong>Thanks &nbsp;for &nbsp;signing &nbsp;up!</strong></p>
                                               </div>
                 
                                             </td>
@@ -346,7 +349,7 @@ export const sendEmail = async({email, emailType, userId, name}:any) =>{
                 
                                               <div class="v-color" style="font-size: 14px; line-height: 160%; text-align: center; word-wrap: break-word;">
                                                 <p style="line-height: 160%; font-size: 14px;"><span style="font-size: 18px; line-height: 28.8px;">Thanks,</span></p>
-                                                <p style="line-height: 160%; font-size: 14px;"><span style="font-size: 18px; line-height: 28.8px;">The <a href="http://www.userforce.in/"style="color: #1553a4; line-height: 22.4px;">UserForce</a> Team</span>
+                                                <p style="line-height: 160%; font-size: 14px;"><span style="font-size: 18px; line-height: 28.8px;">The <a href="http://www.userforce.in/"style="color: #1553a4; line-height: 22.4px;">Userforce</a> Team</span>
                                                 </p>
                                               </div>
                 
