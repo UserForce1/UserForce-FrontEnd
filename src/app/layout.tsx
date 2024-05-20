@@ -1,3 +1,5 @@
+import Hotjar from "@hotjar/browser";
+import { useEffect } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -15,11 +17,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const siteId = 4988481;
+  const hotjarVersion = 6;
+  Hotjar.init(siteId, hotjarVersion);
   return (
     <html lang="en">
       <body className={inter.className}>
-      <Toaster position="bottom-center" />
-        {children}</body>
+        <Toaster position="bottom-center" />
+        {children}
+      </body>
     </html>
   );
 }

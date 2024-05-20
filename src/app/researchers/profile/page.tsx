@@ -162,7 +162,7 @@ export default function ResearchersProfile() {
               d="M256 0C114.84 0 0 114.84 0 256s114.84 256 256 256 256-114.84 256-256S397.16 0 256 0zm0 470.487c-118.265 0-214.487-96.214-214.487-214.487 0-118.265 96.221-214.487 214.487-214.487 118.272 0 214.487 96.221 214.487 214.487 0 118.272-96.215 214.487-214.487 214.487z"
               data-original="#000000" />
           </svg>
-          <h4 className="text-2xl text-[#1553A4] font-semibold mt-6">Thank you {user}!</h4>
+          <h4 className="text-2xl text-[#1553A4] font-semibold mt-6">Thank you, {user}!</h4>
           <p className="text-base leading-relaxed text-[#1553A4] mt-4">Demographics have been captured, We'll reach out to you via email with suitable matches.
 </p>
           {/* <p className="text-sm text-[#1553A4] mt-4">Thank you!</p> */}
