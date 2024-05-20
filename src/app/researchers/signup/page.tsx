@@ -40,7 +40,7 @@ export default function RSIGNUP() {
       //router.push("/mailpopup");
     } catch (error: any) {
       setLoading(false);
-      toast.custom(<div className="shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] text-black flex w-max max-w-sm rounded overflow-hidden font-[sans-serif] mt-2"
+      toast.custom(<div className="bg-gray-200 text-black flex w-max max-w-sm rounded overflow-hidden font-[sans-serif] mt-2"
         role="alert">
         <div className="flex items-center px-5 bg-red-500">
           <svg xmlns="http://www.w3.org/2000/svg" className="w-6 shrink-0 fill-white inline" viewBox="0 0 32 32">
