@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const siteId = 4989152;
+  const siteId = 4990524;
 const hotjarVersion = 6;
 
 
