@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { Metadata } from 'next';
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
