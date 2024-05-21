@@ -28,7 +28,8 @@
     "react-scroll": "^1.8.9",
     "react-select": "^5.8.0",
     "yup": "^1.4.0",
-    "yup-password": "^0.2.2"
+    "yup-password": "^0.2.2",
+    "zipyai": "^1.7.22"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",

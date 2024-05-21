@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { Metadata } from 'next';
+import zipy from 'zipyai';
+
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,7 +20,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
+  zipy.init('d9bca32d');
   return (
     <html lang="en">
       <body className={inter.className}>
