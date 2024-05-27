@@ -13,8 +13,8 @@ export async function POST(request: NextRequest) {
   // Defines an asynchronous POST request handler.
   try {
     const reqBody = await request.json();
-    const {jobTitle,seniority, skills, workemail, company, companysize, worksetting, industry, smallbusinessowner, linkedinprofile, facebookprofile, otherprofile, age, city, gender, income, education, maritalstatus, language, homeowner, webcam} = reqBody;
-    console.log(jobTitle, seniority, skills, workemail, company, companysize, worksetting, industry, smallbusinessowner, linkedinprofile, facebookprofile, otherprofile, age, city, gender, income, education, maritalstatus, language, homeowner, webcam);
+    const {jobTitle,seniority, skills, company, companysize, worksetting, industry, linkedinprofile, facebookprofile, age, city, gender, education, maritalstatus, numberofchildren, language, homeowner, carowner, petparent, creditcard, mobileos, tabletos, laptopos} = reqBody;
+    console.log("api",jobTitle, seniority, skills, company, companysize, worksetting, industry, linkedinprofile, facebookprofile, age, city, gender, education, maritalstatus, numberofchildren, language, homeowner, carowner, petparent, creditcard, mobileos, tabletos, laptopos);
     // Parses the request body to extract gender.
 
     // Extract user ID from the authentication token
@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
       email,
       jobTitle,
       seniority,
-      skills, workemail, company, companysize, worksetting, industry, smallbusinessowner, linkedinprofile, facebookprofile, otherprofile, age, city, gender, income, education, maritalstatus, language, homeowner, webcam
+      skills, company, companysize, worksetting, industry, linkedinprofile, facebookprofile, age, city, gender, education, maritalstatus, numberofchildren, language, homeowner, carowner, petparent, creditcard, mobileos, tabletos, laptopos
     });
 
     // Saves the new user profile to the database.

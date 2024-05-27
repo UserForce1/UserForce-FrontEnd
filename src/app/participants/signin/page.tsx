@@ -129,7 +129,7 @@ export default function PSIGNIN() {
                 <div className="mb-10">
                   <h3 className="text-2xl font-extrabold">Sign in</h3>
                   <p className="text-base leading-relaxed mt-4">
-                    Boost your monthly income in giving product interviews
+                    Boost your monthly income by giving product interviews
                   </p>
                 </div>
                 {render()}

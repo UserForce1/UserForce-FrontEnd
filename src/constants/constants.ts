@@ -1,15 +1,17 @@
 export const participantsFormData = {
   seniority: [
-    {value: "Unpaid",label: "Unpaid"},
-    {value: "Training",label: "Training"},
     {value: "Entry-level",label: "Entry-level"},
-    {value: "Senior",label: "Senior"},
     {value:  "Manager",label:  "Manager"},
+    {value:  "Senior Manager",label:  "Senior Manager"},
+    {value:  "Deputy Manager",label:  "Deputy Manager"},
     {value: "Director",label: "Director"},
     {value: "Vice Preseident(VP)",label: "Vice Preseident(VP)"},
-    {value: "Chief X Office(CxO)",label: "Chief X Office(CxO)"},
+    {value: "Chief X Office(CXO)",label: "Chief X Office(CXO)"},
+    {value: "C Level Executives",label: "C Level Executives"},
     {value: "Partner",label: "Partner"},
     {value: "Owner",label: "Owner"},
+    {value: "Under Training",label: "Under Training"},
+    {value: "Unpaid",label: "Unpaid"},
 ],
 companysize: [
     {value: "Just me",label: "Just me"},
@@ -20,18 +22,16 @@ companysize: [
     {value: "1001-5000 employees",label: "1001-5000 employees"},
     {value: "5001-10,000 employees",label: "5001-10,000 employees"},
     {value: "10,000+ employees",label: "10,000+ employees"},
-    {value: "None of the above",label: "None of the above"},
 ],
 worksetting: [
     { value: "Remote", label: "Remote" },
-    { value: "In-person", label: "In-person" },
+    { value: "On-site", label: "On-site" },
     { value: "Hybrid", label: "Hybrid" },
-    { value: "Not sure", label: "Not sure" },
   ],
-  smallbusinessowner: [
-    { value: "Yes", label: "Yes" },
-    { value: "No", label: "No" },
-  ],
+  // smallbusinessowner: [
+  //   { value: "Yes", label: "Yes" },
+  //   { value: "No", label: "No" },
+  // ],
   gender: [
     { value: "M", label: "Male" },
     { value: "F", label: "Female" },
@@ -39,15 +39,15 @@ worksetting: [
   education: [
     { value: "Didn't finish high school", label: "Didn't finish high school" },
     { value: "Finished high school", label: "Finished high school" },
-    { value: "Some college", label: "Some college" },
     { value: "Undergraduate degree", label: "Undergraduate degree" },
     { value: "Postgraduate degree", label: "Postgraduate degree" },
-    { value: "Vocational / trade school", label: "Vocational / trade school" },
+    { value: "PhD(Doctor of Philosophy)", label: "PhD(Doctor of Philosophy)" },
+    { value: "Distance Education", label: "Distance Education" },
   ],
   maritalstatus: [
     { value: "Never married", label: "Never married" },
     { value: "Married", label: "Married" },
-    { value: "Divorced or separated", label: "Divorced or separated" },
+    { value: "Divorced or separated", label: "Divorced or Separated" },
     { value: "Widowed", label: "Widowed" },
   ],
   language: [
@@ -61,9 +61,39 @@ worksetting: [
     { value: "Yes", label: "Yes" },
     { value: "No", label: "No" },
   ],
-  webcam: [
-    { value: "Yes, my computer has webcam", label: "Yes, my computer has webcam" },
-    { value: "No, my computer doest not have a webcam", label: "No, my computer doest not have a webcam" },
+  carowner: [
+    { value: "Yes", label: "Yes" },
+    { value: "No", label: "No" },
+  ],
+  petparent: [  
+    { value: "Yes", label: "Yes" },
+    { value: "No", label: "No" },
+  ],
+  creditcard: [
+    { value: "Yes", label: "Yes" },
+    { value: "No", label: "No" },
+  ],
+  mobileos: [
+    { value: "IOS", label: "IOS" },
+    { value: "Android", label: "Android" },
+    { value: "Symbian", label: "Symbian" },
+    { value: "HMOS", label: "HMOS" },
+    { value: "None", label: "None" },
+  ],
+  tabletos: [
+    { value: "IOS", label: "IOS" },
+    { value: "Android", label: "Android" },
+    { value: "Chrome OS", label: "Chrome OS" },
+    { value: "Windows", label: "Windows" },
+    { value: "None", label: "None" },
+  ],
+  laptopos: [
+    { value: "MAC OS", label: "MAC OS" },
+    { value: "Windows OS", label: "Windows OS" },
+    { value: "Linux OS", label: "Linux OS" },
+    { value: "Android OS", label: "Android OS" },
+    { value: "Chrome OS", label: "Chrome OS" },
+    { value: "None", label: "None" },
   ],
 };
 
@@ -80,7 +110,8 @@ export const researchersFormData = {
 role: [
     {value: "Freelance / Self employed",label: "Freelance / Self employed"},
     {value: "Individual Contributor",label: "Individual Contributor"},
-    {value: "Manager",label: "Manager"},
+    {value: "Product Manager / SPM",label: "Product Manager / SPM"},
+    {value: "User Researcher / Senior",label: "User Researcher / Senior"},
     {value: "Director / Sr Director",label: "Director / Sr Director"},
     {value:  "Head of Product / CPO",label:  "Head of Product / CPO"},
     {value: "VP / Sr VP",label: "VP / Sr VP"},

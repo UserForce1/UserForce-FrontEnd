@@ -46,24 +46,30 @@ export default function ParticipantsProfile() {
       jobTitle: values.jobTitle,
       seniority: values.seniority.value,
       skills: values.skills,
-      workemail: values.workemail,
+      //workemail: values.workemail,
       company: values.company,
       companysize: values.companysize.value,
       worksetting: values.worksetting.value,
       industry: values.industry,
-      smallbusinessowner: values.smallbusinessowner.value,
+      //smallbusinessowner: values.smallbusinessowner.value,
       linkedinprofile: values.linkedinprofile,
       facebookprofile: values.facebookprofile,
-      otherprofile: values.otherprofile,
+      //otherprofile: values.otherprofile,
       age: values.age,
       city: values.city,
       gender: values.gender.value,
-      income: values.income,
+      //income: values.income,
       education: values.education.value,
       maritalstatus: values.maritalstatus.value,
+      numberofchildren: values.numberofchildren,
       language: values.language.value,
       homeowner: values.homeowner.value,
-      webcam: values.webcam.value,
+      carowner: values.carowner.value,
+      petparent: values.petparent.value,
+      creditcard: values.creditcard.value,
+      mobileos: values.mobileos.value,
+      tabletos: values.tabletos.value,
+      laptopos: values.laptopos.value,
     };
     try {
       setProfileSubmit(true);
@@ -81,24 +87,30 @@ export default function ParticipantsProfile() {
       values.jobTitle,
       values.seniority.value,
       values.skills,
-      values.workemail,
+      //values.workemail,
       values.company,
       values.companysize.value,
       values.worksetting.value,
       values.industry,
-      values.smallbusinessowner.value,
+      //values.smallbusinessowner.value,
       values.linkedinprofile,
       values.facebookprofile,
-      values.otherprofile,
+      //values.otherprofile,
       values.gender.value,
       values.age,
       values.city,
-      values.income,
+      //values.income,
       values.education.value,
       values.maritalstatus.value,
+      values.numberofchildren,
       values.language.value,
       values.homeowner.value,
-      values.webcam.value
+      values.carowner.value,
+      values.petparent.value,
+      values.creditcard.value,
+      values.mobileos.value,
+      values.tabletos.value,
+      values.laptopos.value,
     );
   };
 
@@ -204,8 +216,8 @@ export default function ParticipantsProfile() {
     </div>
          </>:<>
          <div className="text-center  bg-blue-100 min-h-[160px] sm:p-6 p-4">
-                  <h4 className="md:text-4xl text-3xl font-extrabold mb-6">
-                    Please fill your details.
+                  <h4 className="md:text-3xl text-2xl font-extrabold mb-6">
+                    Please provide your details.
                   </h4>
                 </div>
 
@@ -220,7 +232,7 @@ export default function ParticipantsProfile() {
                           <p className="border border-[#1553A4]"></p>
                         </div>
                         <label className="block mb-6">
-                          <span className="text-gray-700">Job title</span>
+                          <span className="text-gray-700">Job title - Designation</span>
                           <Controller
                             name={"jobTitle"} // for the gender field
                             control={control} // obtained from the useForm hook
@@ -241,7 +253,7 @@ export default function ParticipantsProfile() {
             focus:ring-indigo-200
             focus:ring-opacity-50
           "
-                                  placeholder="eg: Software Developer"
+                                  placeholder="eg: Software Developer, Product Managers, User Researcher's, CSM, Project Managers"
                                 />
                               );
                             }}
@@ -272,7 +284,7 @@ export default function ParticipantsProfile() {
                           </p>
                         </label>
                         <label className="block mb-6">
-                          <span className="text-gray-700">Skills</span>
+                          <span className="text-gray-700">Job Skills</span>
                           <Controller
                             name={"skills"} // for the gender field
                             control={control} // obtained from the useForm hook
@@ -293,7 +305,7 @@ export default function ParticipantsProfile() {
             focus:ring-indigo-200
             focus:ring-opacity-50
           "
-                                  placeholder="eg: Java, AWS certified developer"
+                                  placeholder="eg: Java, AWS certified developer, Aritificial Intelligency, Cybersecurity, Mobile Developer, Analytics"
                                 />
                               );
                             }}
@@ -303,7 +315,7 @@ export default function ParticipantsProfile() {
                             {errors.skills?.message}
                           </p>
                         </label>
-                        <label className="block mb-6">
+                        {/* <label className="block mb-6">
                           <span className="text-gray-700">Work Email</span>
                           <Controller
                             name={"workemail"} // for the gender field
@@ -334,7 +346,7 @@ export default function ParticipantsProfile() {
                           <p className="text-red-500">
                             {errors.workemail?.message}
                           </p>
-                        </label>
+                        </label> */}
                         <label className="block mb-6">
                           <span className="text-gray-700">Company</span>
                           <Controller
@@ -377,7 +389,7 @@ export default function ParticipantsProfile() {
                                 <Select
                                   {...field}
                                   options={participantsFormData.companysize}
-                                  placeholder="Select Seniority"
+                                  placeholder="Select Company Size"
                                 />
                               );
                             }}
@@ -387,7 +399,7 @@ export default function ParticipantsProfile() {
                           </p>
                         </label>
                         <label className="block mb-6">
-                          <span className="text-gray-700">Work setting</span>
+                          <span className="text-gray-700">Mode of Work</span>
                           <Controller
                             name={"worksetting"} // for the gender field
                             control={control} // obtained from the useForm hook
@@ -396,7 +408,7 @@ export default function ParticipantsProfile() {
                                 <Select
                                   {...field}
                                   options={participantsFormData.worksetting}
-                                  placeholder="Select Seniority"
+                                  placeholder="Select Mode of Work"
                                 />
                               );
                             }}
@@ -406,7 +418,7 @@ export default function ParticipantsProfile() {
                           </p>
                         </label>
                         <label className="block mb-6">
-                          <span className="text-gray-700">Industry</span>
+                          <span className="text-gray-700">Industry Domain</span>
                           <Controller
                             name={"industry"} // for the gender field
                             control={control} // obtained from the useForm hook
@@ -427,7 +439,7 @@ export default function ParticipantsProfile() {
             focus:ring-indigo-200
             focus:ring-opacity-50
           "
-                                  placeholder="Enter your industry"
+                                  placeholder="Enter your Industry Domain"
                                 />
                               );
                             }}
@@ -437,7 +449,7 @@ export default function ParticipantsProfile() {
                             {errors.industry?.message}
                           </p>
                         </label>
-                        <label className="block mb-6">
+                        {/* <label className="block mb-6">
                           <span className="text-gray-700">
                             Small business owner
                           </span>
@@ -459,7 +471,7 @@ export default function ParticipantsProfile() {
                           <p className="text-red-500">
                             {errors.smallbusinessowner?.value?.message}
                           </p>
-                        </label>
+                        </label> */}
                       </div>
                       <div className="p-6 border-2 border-[#1553A4] sm:rounded-md w-full  mx-auto mb-6">
                         <div className="space-y-2 mb-2">
@@ -470,7 +482,7 @@ export default function ParticipantsProfile() {
                         </div>
                         <label className="block mb-6">
                           <span className="text-gray-700">
-                            LinkedIn profile
+                            LinkedIn Profile
                           </span>
                           <Controller
                             name={"linkedinprofile"} // for the gender field
@@ -504,7 +516,7 @@ export default function ParticipantsProfile() {
                         </label>
                         <label className="block mb-6">
                           <span className="text-gray-700">
-                            Facebook profile
+                            Facebook Profile
                           </span>
                           <Controller
                             name={"facebookprofile"} // for the gender field
@@ -531,8 +543,11 @@ export default function ParticipantsProfile() {
                               );
                             }}
                           />
+                          <p className="text-red-500">
+                            {errors.facebookprofile?.message}
+                          </p>
                         </label>
-                        <label className="block mb-6">
+                        {/* <label className="block mb-6">
                           <span className="text-gray-700">Others</span>
                           <Controller
                             name={"otherprofile"} // for the gender field
@@ -559,12 +574,12 @@ export default function ParticipantsProfile() {
                               );
                             }}
                           />
-                        </label>
+                        </label> */}
                       </div>
                       <div className="p-6 border-2 border-[#1553A4] sm:rounded-md w-full  mx-auto mb-6">
                         <div className="space-y-2 mb-2">
                           <h2 className="md:text-xl text-2xl font-extrabold mb-2 text-blue-400">
-                            Demographic details(required)
+                            Demographic details
                           </h2>
                           <p className="border border-[#1553A4]"></p>
                           <p className="text-base leading-relaxed text-orange-400">
@@ -652,7 +667,7 @@ export default function ParticipantsProfile() {
                             {errors.gender?.value?.message}
                           </p>
                         </label>
-                        <label className="block mb-6">
+                        {/* <label className="block mb-6">
                           <span className="text-gray-700">
                             Household income per year
                           </span>
@@ -683,11 +698,11 @@ export default function ParticipantsProfile() {
                           />
                           <p className="text-red-500">
                             {errors.income?.message}
-                          </p>
-                        </label>
+                          </p> 
+                        </label>*/}
                         <label className="block mb-6">
                           <span className="text-gray-700">
-                            Higest level of education
+                            Higest Level of Education
                           </span>
                           <Controller
                             name={"education"} // for the gender field
@@ -707,7 +722,7 @@ export default function ParticipantsProfile() {
                           </p>
                         </label>
                         <label className="block mb-6">
-                          <span className="text-gray-700">Marital status</span>
+                          <span className="text-gray-700">Marital Status</span>
                           <Controller
                             name={"maritalstatus"} // for the gender field
                             control={control} // obtained from the useForm hook
@@ -725,6 +740,36 @@ export default function ParticipantsProfile() {
                             {errors.maritalstatus?.value?.message}
                           </p>
                         </label>
+                        <label className="block mb-6">
+                          <span className="text-gray-700">Number of Children</span>
+                          <Controller
+                            name={"numberofchildren"} // for the gender field
+                            control={control} // obtained from the useForm hook
+                            render={({ field }) => {
+                              return (
+                                <input
+                                  {...field}
+                                  type="text"
+                                  className="
+            block
+            w-full
+            mt-1
+            border-gray-300
+            rounded-md
+            shadow-sm
+            focus:border-indigo-300
+            focus:ring
+            focus:ring-indigo-200
+            focus:ring-opacity-50
+          "
+                                  placeholder="How many children do you have"
+                                />
+                              );
+                            }}
+                          />
+
+                          <p className="text-red-500">{errors.numberofchildren?.message}</p>
+                        </label>
                       </div>
                       <div className="p-6 border-2 border-[#1553A4] sm:rounded-md w-full  mx-auto mb-6">
                         <div className="space-y-2 mb-2">
@@ -736,7 +781,7 @@ export default function ParticipantsProfile() {
 
                         <label className="block mb-6">
                           <span className="text-gray-700">
-                            English language proficiency - Speaking
+                            English Language Proficiency - Speaking
                           </span>
                           <Controller
                             name={"language"} // for the gender field
@@ -757,7 +802,7 @@ export default function ParticipantsProfile() {
                         </label>
 
                         <label className="block mb-6">
-                          <span className="text-gray-700">Home owner</span>
+                          <span className="text-gray-700">Home Owner</span>
                           <Controller
                             name={"homeowner"} // for the gender field
                             control={control} // obtained from the useForm hook
@@ -775,11 +820,68 @@ export default function ParticipantsProfile() {
                             {errors.homeowner?.value?.message}
                           </p>
                         </label>
+                        <label className="block mb-6">
+                          <span className="text-gray-700">Car Owner</span>
+                          <Controller
+                            name={"carowner"} // for the gender field
+                            control={control} // obtained from the useForm hook
+                            render={({ field }) => {
+                              return (
+                                <Select
+                                  {...field}
+                                  options={participantsFormData.carowner}
+                                  placeholder="Do you own a car"
+                                />
+                              );
+                            }}
+                          />
+                          <p className="text-red-500">
+                            {errors.carowner?.value?.message}
+                          </p>
+                        </label>
+                        <label className="block mb-6">
+                          <span className="text-gray-700">Pet Parent</span>
+                          <Controller
+                            name={"petparent"} // for the gender field
+                            control={control} // obtained from the useForm hook
+                            render={({ field }) => {
+                              return (
+                                <Select
+                                  {...field}
+                                  options={participantsFormData.petparent}
+                                  placeholder="Are you a pet parent"
+                                />
+                              );
+                            }}
+                          />
+                          <p className="text-red-500">
+                            {errors.petparent?.value?.message}
+                          </p>
+                        </label>
+                        <label className="block mb-6">
+                          <span className="text-gray-700">Do you hold a credit card</span>
+                          <Controller
+                            name={"creditcard"} // for the gender field
+                            control={control} // obtained from the useForm hook
+                            render={({ field }) => {
+                              return (
+                                <Select
+                                  {...field}
+                                  options={participantsFormData.creditcard}
+                                  placeholder="Do you hold a credit card"
+                                />
+                              );
+                            }}
+                          />
+                          <p className="text-red-500">
+                            {errors.creditcard?.value?.message}
+                          </p>
+                        </label>
                       </div>
                       <div className="p-6 border-2 border-[#1553A4] sm:rounded-md w-full  mx-auto mb-6">
                         <div className="space-y-2 mb-2">
                           <h2 className="md:text-xl text-2xl font-extrabold mb-2 text-blue-400">
-                            Technical details(required)
+                            Technical details
                           </h2>
                           <p className="border border-[#1553A4]"></p>
                           <p className="text-base leading-relaxed text-orange-400">
@@ -791,23 +893,65 @@ export default function ParticipantsProfile() {
 
                         <label className="block mb-6">
                           <span className="text-gray-700">
-                            Do you have a computer with a webcam?(REQUIRED)
+                            What is the Operating System of your Mobile Phone?
                           </span>
                           <Controller
-                            name={"webcam"} // for the gender field
+                            name={"mobileos"} // for the gender field
                             control={control} // obtained from the useForm hook
                             render={({ field }) => {
                               return (
                                 <Select
                                   {...field}
-                                  options={participantsFormData.webcam}
-                                  placeholder="Do you have webcam"
+                                  options={participantsFormData.mobileos}
+                                  placeholder="Mobile phone operating system"
                                 />
                               );
                             }}
                           />
                           <p className="text-red-500">
-                            {errors.webcam?.value?.message}
+                            {errors.mobileos?.value?.message}
+                          </p>
+                        </label>
+                        <label className="block mb-6">
+                          <span className="text-gray-700">
+                            What is the Operating System of your tabletos?
+                          </span>
+                          <Controller
+                            name={"tabletos"} // for the gender field
+                            control={control} // obtained from the useForm hook
+                            render={({ field }) => {
+                              return (
+                                <Select
+                                  {...field}
+                                  options={participantsFormData.tabletos}
+                                  placeholder="Tablet operating system"
+                                />
+                              );
+                            }}
+                          />
+                          <p className="text-red-500">
+                            {errors.tabletos?.value?.message}
+                          </p>
+                        </label>
+                        <label className="block mb-6">
+                          <span className="text-gray-700">
+                            What is the Operating System of your Laptop?
+                          </span>
+                          <Controller
+                            name={"laptopos"} // for the gender field
+                            control={control} // obtained from the useForm hook
+                            render={({ field }) => {
+                              return (
+                                <Select
+                                  {...field}
+                                  options={participantsFormData.laptopos}
+                                  placeholder="Laptop operating system"
+                                />
+                              );
+                            }}
+                          />
+                          <p className="text-red-500">
+                            {errors.laptopos?.value?.message}
                           </p>
                         </label>
                       </div>
