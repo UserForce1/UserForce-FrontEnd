@@ -914,7 +914,7 @@ export default function ParticipantsProfile() {
                         </label>
                         <label className="block mb-6">
                           <span className="text-gray-700">
-                            What is the Operating System of your tabletos?
+                            What is the Operating System of your Tablet?
                           </span>
                           <Controller
                             name={"tabletos"} // for the gender field
