@@ -18,8 +18,8 @@ export default function CTA() {
               schedule, and compensate participants, all through Userforce.
             </p>
             <button 
-            onClick={() => router.push("/signup")}
-            className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8 hover:animate-bounce relative overflow-hidden">
+            onClick={() => router.push("/researchers/signup")}
+            className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8 transform duration-500 ease-in-out hover:scale-110 hover:brightness-110 hover:animate-pulse active:animate-bounce relative overflow-hidden">
               Start your research
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -59,8 +59,8 @@ export default function CTA() {
               Join Userforce to participate in significant research endeavours.
             </p>
             <button 
-            onClick={() => router.push("/signup")}
-            className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8 hover:animate-bounce relative overflow-hidden">
+            onClick={() => router.push("/participants/signup")}
+            className="bg-[#1553A4] hover:bg-blue-200 text-white hover:text-[#1553A4] hover:border-[#1553A4] border flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8 transform duration-500 ease-in-out hover:scale-110 hover:brightness-110 hover:animate-pulse active:animate-bounce relative overflow-hidden">
               Sign up as a participant
               <svg
                 xmlns="http://www.w3.org/2000/svg"

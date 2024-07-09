@@ -11,7 +11,7 @@ export default function TESTIMONIALS() {
               {/* <p>Veniam proident aute magna anim excepteur et ex consectetur velit ullamco veniam minim aute sit. Elit
               occaecat officia et laboris Lorem minim. Officia do aliqua adipisicing ullamco in.</p> */}
             </div>
-            <div className="flex space-x-4 items-end justify-end">
+            {/* <div className="flex space-x-4 items-end justify-end">
               <div className="bg-white w-10 h-10 grid items-center justify-center rounded-full rotate-90 shrink-0 cursor-pointer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ export default function TESTIMONIALS() {
                   ></path>
                 </svg>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="grid md:grid-cols-3 gap-10 mt-16">
             <div>
